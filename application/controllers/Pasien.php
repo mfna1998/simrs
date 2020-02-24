@@ -9,7 +9,6 @@ class Pasien extends CI_Controller
     {
         parent::__construct();
 		$this->load->model('Pasien_model');
-		$this->load->model('Wilayah_model');
         $this->load->library('form_validation');
     }
 
