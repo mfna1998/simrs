@@ -96,17 +96,14 @@ $db['default'] = array(
 );
 $db['db2'] = array(
 	'dsn'	=> '',
-<<<<<<< HEAD
-	'hostname' => '192.168.32.28',
-	'username' => 'sirs',
-	'password' => 'sirs',
-	'database' => 'aplikasi',
-=======
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
 	'database' => 'simrs',
->>>>>>> cfefd363fa0a53520bb7233c6dd29287c6e2b138
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'simrs',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
