@@ -10,6 +10,7 @@ class Referensi extends CI_Controller
         parent::__construct();
         $this->load->model('Referensi_model');
         $this->load->library('form_validation');
+        $db2 = $this->load->database('db2', TRUE);
     }
 
     public function index()

@@ -10,6 +10,7 @@ class Jenis_referensi extends CI_Controller
         parent::__construct();
         $this->load->model('Jenis_referensi_model');
         $this->load->library('form_validation');
+        $db2 = $this->load->database('db2', TRUE);
     }
 
     public function index()

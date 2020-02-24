@@ -10,6 +10,7 @@ class Kontak_keluarga_pasien extends CI_Controller
         parent::__construct();
         $this->load->model('Kontak_keluarga_pasien_model');
         $this->load->library('form_validation');
+        $db2 = $this->load->database('db2', TRUE);
     }
 
     public function index()

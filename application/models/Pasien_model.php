@@ -12,9 +12,11 @@ class Pasien_model extends CI_Model
 
     function __construct()
     {
-        parent::__construct();
+		parent::__construct();
+		// Load database kedua
+		$db2 = $this->load->database('db2', TRUE);
     }
-
+	
     // get all
     function get_all()
     {

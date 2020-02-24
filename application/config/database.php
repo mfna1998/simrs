@@ -94,12 +94,19 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-$db['otherdb'] = array(
+$db['db2'] = array(
 	'dsn'	=> '',
+<<<<<<< HEAD
 	'hostname' => '192.168.32.28',
 	'username' => 'sirs',
 	'password' => 'sirs',
 	'database' => 'aplikasi',
+=======
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'simrs',
+>>>>>>> cfefd363fa0a53520bb7233c6dd29287c6e2b138
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

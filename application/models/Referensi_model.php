@@ -13,6 +13,7 @@ class Referensi_model extends CI_Model
     function __construct()
     {
         parent::__construct();
+        $db2 = $this->load->database('db2', TRUE);
     }
 
     // get all

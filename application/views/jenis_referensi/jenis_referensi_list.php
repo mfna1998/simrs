@@ -53,7 +53,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbod+y>
                             <?php
                             foreach ($jenis_referensi_data as $jenis_referensi) {
                             ?>
