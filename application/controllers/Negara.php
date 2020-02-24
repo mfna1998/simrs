@@ -159,4 +159,4 @@ class Negara extends CI_Controller
 
 /* End of file Negara.php */
 /* Location: ./application/controllers/Negara.php */
-/* Please DO NOT modify this information : */
+

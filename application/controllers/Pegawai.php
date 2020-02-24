@@ -237,4 +237,4 @@ class Pegawai extends CI_Controller
 
 /* End of file Pegawai.php */
 /* Location: ./application/controllers/Pegawai.php */
-/* Please DO NOT modify this information : */
+

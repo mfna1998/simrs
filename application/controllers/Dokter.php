@@ -177,5 +177,5 @@ class Dokter extends CI_Controller
 
 /* End of file Dokter.php */
 /* Location: ./application/controllers/Dokter.php */
-/* Please DO NOT modify this information : */
+
 

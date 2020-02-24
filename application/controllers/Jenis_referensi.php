@@ -159,4 +159,4 @@ class Jenis_referensi extends CI_Controller
 
 /* End of file Jenis_referensi.php */
 /* Location: ./application/controllers/Jenis_referensi.php */
-/* Please DO NOT modify this information : */
+

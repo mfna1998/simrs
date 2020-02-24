@@ -150,4 +150,4 @@ class Kontak_keluarga_pasien extends CI_Controller
 
 /* End of file Kontak_keluarga_pasien.php */
 /* Location: ./application/controllers/Kontak_keluarga_pasien.php */
-/* Please DO NOT modify this information : */
+

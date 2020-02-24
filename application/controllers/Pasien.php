@@ -297,4 +297,4 @@ class Pasien extends CI_Controller
 
 /* End of file Pasien.php */
 /* Location: ./application/controllers/Pasien.php */
-/* Please DO NOT modify this information : */
+

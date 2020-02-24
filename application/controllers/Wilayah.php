@@ -165,4 +165,3 @@ class Wilayah extends CI_Controller
 
 /* End of file Wilayah.php */
 /* Location: ./application/controllers/Wilayah.php */
-/* Please DO NOT modify this information : */

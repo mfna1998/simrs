@@ -165,4 +165,4 @@ class Ruangan extends CI_Controller
 
 /* End of file Ruangan.php */
 /* Location: ./application/controllers/Ruangan.php */
-/* Please DO NOT modify this information : */
+
