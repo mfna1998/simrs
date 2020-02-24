@@ -100,4 +100,4 @@ class Pegawai_model extends CI_Model
 
 /* End of file Pegawai_model.php */
 /* Location: ./application/models/Pegawai_model.php */
-/* Please DO NOT modify this information : */
+

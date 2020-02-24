@@ -76,4 +76,4 @@ class Wilayah_model extends CI_Model
 
 /* End of file Wilayah_model.php */
 /* Location: ./application/models/Wilayah_model.php */
-/* Please DO NOT modify this information : */
+

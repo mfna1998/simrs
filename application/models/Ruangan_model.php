@@ -76,4 +76,4 @@ class Ruangan_model extends CI_Model
 
 /* End of file Ruangan_model.php */
 /* Location: ./application/models/Ruangan_model.php */
-/* Please DO NOT modify this information : */
+

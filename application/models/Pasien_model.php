@@ -120,4 +120,4 @@ class Pasien_model extends CI_Model
 
 /* End of file Pasien_model.php */
 /* Location: ./application/models/Pasien_model.php */
-/* Please DO NOT modify this information : */
+

@@ -74,4 +74,4 @@ class Negara_model extends CI_Model
 
 /* End of file Negara_model.php */
 /* Location: ./application/models/Negara_model.php */
-/* Please DO NOT modify this information : */
+

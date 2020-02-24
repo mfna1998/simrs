@@ -74,4 +74,4 @@ class Jenis_referensi_model extends CI_Model
 
 /* End of file Jenis_referensi_model.php */
 /* Location: ./application/models/Jenis_referensi_model.php */
-/* Please DO NOT modify this information : */
+

@@ -80,5 +80,5 @@ class Dokter_model extends CI_Model
 
 /* End of file Dokter_model.php */
 /* Location: ./application/models/Dokter_model.php */
-/* Please DO NOT modify this information : */
+
 

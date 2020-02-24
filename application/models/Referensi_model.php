@@ -72,4 +72,4 @@ class Referensi_model extends CI_Model
 
 /* End of file Referensi_model.php */
 /* Location: ./application/models/Referensi_model.php */
-/* Please DO NOT modify this information : */
+

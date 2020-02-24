@@ -68,4 +68,4 @@ class Kontak_keluarga_pasien_model extends CI_Model
 
 /* End of file Kontak_keluarga_pasien_model.php */
 /* Location: ./application/models/Kontak_keluarga_pasien_model.php */
-/* Please DO NOT modify this information : */
+
