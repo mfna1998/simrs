@@ -34,7 +34,7 @@
         </div>
 	    <div class="form-group">
             <label for="datetime">TANGGAL LAHIR <?php echo form_error('TANGGAL_LAHIR') ?></label>
-            <input type="text" class="form-control" name="TANGGAL_LAHIR" id="TANGGAL_LAHIR" placeholder="TANGGAL LAHIR" value="<?php echo $TANGGAL_LAHIR; ?>" />
+            <input type="date" class="form-control" name="TANGGAL_LAHIR" id="TANGGAL_LAHIR" placeholder="TANGGAL LAHIR" value="<?php echo $TANGGAL_LAHIR; ?>" />
         </div>
 	    <div class="form-group">
             <label for="tinyint">JENIS KELAMIN <?php echo form_error('JENIS_KELAMIN') ?></label>
