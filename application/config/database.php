@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'simrs',
+	'hostname' => '192.168.32.28',
+	'username' => 'sirs',
+	'password' => 'sirs',
+	'database' => 'master',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -96,9 +96,9 @@ $db['default'] = array(
 );
 $db['otherdb'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => '192.168.32.28',
+	'username' => 'sirs',
+	'password' => 'sirs',
 	'database' => 'aplikasi',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
