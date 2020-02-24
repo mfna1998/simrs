@@ -14,6 +14,9 @@ class Pasien extends CI_Controller
 
     public function index()
     {
+		$x['data']=$this->Wilayah_model->get_all();
+		$this->load->view('pasien/pasien_form',$x);
+
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
         
