@@ -9,7 +9,9 @@ class Pasien extends CI_Controller
     {
         parent::__construct();
 		$this->load->model('Pasien_model');
-        $this->load->library('form_validation');
+		$this->load->library('form_validation');
+		// Load database kedua
+		$db2 = $this->load->database('db2', TRUE);
     }
 
     public function index()
