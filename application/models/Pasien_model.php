@@ -8,7 +8,7 @@ class Pasien_model extends CI_Model
 
     public $table = 'pasien';
     public $id = 'NORM';
-    public $order = 'ASC';
+	public $order = 'ASC';
 
     function __construct()
     {
@@ -20,7 +20,7 @@ class Pasien_model extends CI_Model
     {
         $this->db->order_by($this->id, $this->order);
         return $this->db->get($this->table)->result();
-    }
+	}
 
     // get data by id
     function get_by_id($id)
@@ -114,8 +114,13 @@ class Pasien_model extends CI_Model
     {
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
-    }
+	}
 
+	function get_wilayah(){
+		$hasil=$this->db->query("SELECT * FROM wilayah");
+		return $hasil;
+	}
+	
 }
 
 /* End of file Pasien_model.php */
