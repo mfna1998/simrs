@@ -58,12 +58,7 @@
         </div>
 	    <div class="form-group">
             <label for="char">WILAYAH <?php echo form_error('WILAYAH') ?></label>
-            <select name="WILAYAH" id="WILAYAH" class="form-control">
-	        <option value="0">-PILIH-</option>
-	        <?php foreach($data->result() as $row):?>
-	            <option value="<?php echo $row->ID;?>"><?php echo $row->DESKRIPSI;?></option>
-	        <?php endforeach;?>
-	        </select>
+            <input type="text" class="form-control" name="WILAYAH" id="WILAYAH" placeholder="WILAYAH" value="<?php echo $WILAYAH; ?>" />
         </div>
 	    <div class="form-group">
             <label for="tinyint">AGAMA <?php echo form_error('AGAMA') ?></label>
@@ -124,31 +119,6 @@
 	    <input type="hidden" name="NORM" value="<?php echo $NORM; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('pasien') ?>" class="btn btn-default">Cancel</a>
-    </form>
-    <script type="text/javascript" src="<?php echo base_url().'assets/js/jquery-2.2.3.min.js'?>"></script>
-<script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#WILAYAH').change(function(){
-			var id=$(this).val();
-			$.ajax({
-				url : "<?php echo base_url();?>index.php/kategori/get_subkategori",
-				method : "POST",
-				data : {id: id},
-				async : false,
-		        dataType : 'json',
-				success: function(data){
-					var html = '';
-		            var i;
-		            for(i=0; i<data.length; i++){
-		                html += '<option>'+data[i].subkategori_nama+'</option>';
-		            }
-		            $('.subkategori').html(html);
-					
-				}
-			});
-		});
-	});
-</script>
+	</form>
     </body>
 </html>

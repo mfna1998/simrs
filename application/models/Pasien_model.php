@@ -115,11 +115,6 @@ class Pasien_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
 	}
-
-	function get_wilayah(){
-		$hasil=$this->db->query("SELECT * FROM wilayah");
-		return $hasil;
-	}
 	
 }
 
