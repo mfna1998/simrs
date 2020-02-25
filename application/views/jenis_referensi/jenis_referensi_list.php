@@ -183,7 +183,7 @@
                     </div>
 
                     <div>
-                        <form action="<?php echo site_url('jenis_referensi/index'); ?>" class="form-inline" method="get">
+                        <form action="<?php echo site_url('jenis_referensi'); ?>" class="form-inline" method="get">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
                                 <span class="input-group-btn">
