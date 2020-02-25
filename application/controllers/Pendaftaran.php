@@ -3,12 +3,16 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Pasien extends CI_Controller
+class Pendaftaran extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-		$this->load->model('Pasien_model');
+        $this->load->model('Pendaftaran_model');
+        $this->load->model('Pasien_model');
+        $this->load->model('Kontak_pasien_model');
+        $this->load->model('Keluarga_pasien_model');
+        $this->load->model('Kontak_keluarga_model');
         $this->load->library('form_validation');
     }
 
@@ -18,34 +22,34 @@ class Pasien extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'pasien/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'pasien/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'pendaftaran/index.html?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'pendaftaran/index.html?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'pasien/index.html';
-            $config['first_url'] = base_url() . 'pasien/index.html';
+            $config['base_url'] = base_url() . 'pendaftaran/index.html';
+            $config['first_url'] = base_url() . 'pendaftaran/index.html';
         }
 
         $config['per_page'] = 10;
         $config['page_query_string'] = TRUE;
-        $config['total_rows'] = $this->Pasien_model->total_rows($q);
-        $pasien = $this->Pasien_model->get_limit_data($config['per_page'], $start, $q);
+        $config['total_rows'] = $this->Pendaftaran_model->total_rows($q);
+        $pasien = $this->Pendaftaran_model->get_limit_data($config['per_page'], $start, $q);
 
         $this->load->library('pagination');
         $this->pagination->initialize($config);
 
         $data = array(
-            'pasien_data' => $pasien,
+            'pendaftaran_data' => $pendaftaran,
             'q' => $q,
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('pasien/pasien_list', $data);
+        $this->load->view('pendaftaran/pendaftaran_list', $data);
     }
 
     public function read($id) 
     {
-        $row = $this->Pasien_model->get_by_id($id);
+        $row = $this->Pendaftaran_model->get_by_id($id);
         if ($row) {
             $data = array(
 		'NORM' => $row->NORM,
@@ -74,12 +78,21 @@ class Pasien extends CI_Controller
 		'JENIS_PASIEN' => $row->JENIS_PASIEN,
 		'CEKNIK' => $row->CEKNIK,
 		'TANGGAL' => $row->TANGGAL,
-		'STATUS' => $row->STATUS,
+        'STATUS' => $row->STATUS,
+        'JENIS' => $row->JENIS,
+        'NOMOR' => $row->NOMOR,
+        'SHDK' => $row->SHDK,
+        'JENIS_KELAMIN' => $row->JENIS_KELAMIN,
+		'ID' => $row->ID,
+		'NAMA' => $row->NAMA,
+		'ALAMAT' => $row->ALAMAT,
+		'PENDIDIKAN' => $row->PENDIDIKAN,
+		'PEKERJAAN' => $row->PEKERJAAN,
 	    );
-            $this->load->view('pasien/pasien_read', $data);
+            $this->load->view('pendaftaran/pendaftaran_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('pasien'));
+            redirect(site_url('pendaftaran'));
         }
     }
 
@@ -87,7 +100,7 @@ class Pasien extends CI_Controller
     {
         $data = array(
             'button' => 'Create',
-            'action' => site_url('pasien/create_action'),
+            'action' => site_url('pendaftaran/create_action'),
 	    'NORM' => set_value('NORM'),
 	    'NAMA' => set_value('NAMA'),
 	    'PANGGILAN' => set_value('PANGGILAN'),
@@ -114,9 +127,18 @@ class Pasien extends CI_Controller
 	    'JENIS_PASIEN' => set_value('JENIS_PASIEN'),
 	    'CEKNIK' => set_value('CEKNIK'),
 	    'TANGGAL' => set_value('TANGGAL'),
-	    'STATUS' => set_value('STATUS'),
+        'STATUS' => set_value('STATUS'),
+        'JENIS' => set_value('JENIS'),
+        'NOMOR' => set_value('NOMOR'),
+        'SHDK' => set_value('SHDK'),
+        'JENIS_KELAMIN' => set_value('JENIS_KELAMIN'),
+	    'ID' => set_value('ID'),
+	    'NAMA' => set_value('NAMA'),
+	    'ALAMAT' => set_value('ALAMAT'),
+	    'PENDIDIKAN' => set_value('PENDIDIKAN'),
+	    'PEKERJAAN' => set_value('PEKERJAAN'),
 	);
-        $this->load->view('pasien/pasien_form', $data);
+        $this->load->view('pendaftaran/pendaftaran_form', $data);
     }
     
     public function create_action() 
