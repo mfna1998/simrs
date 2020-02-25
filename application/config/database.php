@@ -96,6 +96,14 @@ $db['default'] = array(
 );
 $db['db2'] = array(
 	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'simrs',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'simrs',
 	'hostname' => '192.168.32.28',
 	'username' => 'sirs',
 	'password' => 'sirs',
