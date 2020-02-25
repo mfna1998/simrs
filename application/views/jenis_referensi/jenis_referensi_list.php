@@ -171,7 +171,7 @@
             <div class="container-fluid">
                 <h2 style="margin-top:0px">Jenis Referensi</h2>
                     <div class="row" style="margin-bottom: 10px">
-                        <div class="col-md-4">
+                        <div class="col-md-4">sz
                             <?php echo anchor(site_url('jenis_referensi/create'),'Create', 'class="btn btn-primary"'); ?>
                         </div>
             

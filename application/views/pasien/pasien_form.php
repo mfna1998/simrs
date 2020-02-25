@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>SIMRS</title>
+        <title>harviacode.com - codeigniter crud generator</title>
         <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
         <style>
             body{
@@ -10,7 +10,7 @@
         </style>
     </head>
     <body>
-        <h2 style="margin-top:0px">Pasien</h2>
+        <h2 style="margin-top:0px">Pasien <?php echo $button ?></h2>
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
             <label for="varchar">NAMA <?php echo form_error('NAMA') ?></label>
