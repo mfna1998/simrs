@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>SIMRS</title>
+        <title>harviacode.com - codeigniter crud generator</title>
         <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
         <style>
             body{
@@ -10,7 +10,7 @@
         </style>
     </head>
     <body>
-        <h2 style="margin-top:0px">Pasien Detail</h2>
+        <h2 style="margin-top:0px">Pasien Read</h2>
         <table class="table">
 	    <tr><td>NAMA</td><td><?php echo $NAMA; ?></td></tr>
 	    <tr><td>PANGGILAN</td><td><?php echo $PANGGILAN; ?></td></tr>
