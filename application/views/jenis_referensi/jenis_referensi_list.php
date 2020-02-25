@@ -9,7 +9,6 @@
 
         <title>Jenis Referensi</title>
 
-        <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
         <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
         <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
         <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -171,8 +170,8 @@
             <div class="container-fluid">
                 <h2 style="margin-top:0px">Jenis Referensi</h2>
                     <div class="row" style="margin-bottom: 10px">
-                        <div class="col-md-4">sz
-                            <?php echo anchor(site_url('jenis_referensi/create'),'Create', 'class="btn btn-primary"'); ?>
+                        <div class="col-md-4">
+                            <?php echo anchor(site_url('jenis_referensi/create'),'Create', 'class="btn btn-success"'); ?>
                         </div>
             
                         <div class="col-md-4 text-center">
