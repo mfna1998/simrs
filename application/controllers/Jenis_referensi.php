@@ -19,11 +19,11 @@ class Jenis_referensi extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'jenis_referensi/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'jenis_referensi/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'jenis_referensi?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'jenis_referensi?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'jenis_referensi/index.html';
-            $config['first_url'] = base_url() . 'jenis_referensi/index.html';
+            $config['base_url'] = base_url() . 'jenis_referensi';
+            $config['first_url'] = base_url() . 'jenis_referensi';
         }
 
         $config['per_page'] = 10;
