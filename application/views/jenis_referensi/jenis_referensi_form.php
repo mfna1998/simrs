@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
-    <head>
-    <meta charset="UTF-8">
+
+<head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="au theme template">
 	<meta name="author" content="Hau Nguyen">
@@ -31,8 +32,9 @@
 		}
 
 	</style>
-    </head>
-    <body class="animsition">
+</head>
+
+<body class="animsition">
 	<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
 			<a href="#">
@@ -85,7 +87,6 @@
 			</nav>
 		</div>
 	</aside>
-
 	<!-- PAGE CONTAINER-->
 	<div class="page-container">
 		<!-- HEADER DESKTOP-->
@@ -100,7 +101,6 @@
 							<button class="au-btn--submit" type="submit">
 								<i class="zmdi zmdi-search"></i>
 							</button>
-
 						</form>
 
 						<div class="header-button">
@@ -128,7 +128,6 @@
 												</h5>
 												<span class="email">user@example.com</span>
 											</div>
-
 										</div>
 
 										<div class="account-dropdown__body">
@@ -160,26 +159,39 @@
 				</div>
 			</div>
 		</header>
+		
         <div class="main-content">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
 					<h2 style="margin-top:0px">Tambah Jenis Referensi</h2>
-        <form action="<?php echo $action; ?>" method="post">
-	    <div class="form-group">
-            <label for="varchar">DESKRIPSI <?php echo form_error('DESKRIPSI') ?></label>
-            <input type="text" class="form-control" name="DESKRIPSI" id="DESKRIPSI" placeholder="DESKRIPSI" value="<?php echo $DESKRIPSI; ?>" />
-        </div>
-	    <div class="form-group">
-            <label for="char">SINGKATAN <?php echo form_error('SINGKATAN') ?></label>
-            <input type="text" class="form-control" name="SINGKATAN" id="SINGKATAN" placeholder="SINGKATAN" value="<?php echo $SINGKATAN; ?>" />
-        </div>
-	    <div class="form-group">
-            <label for="tinyint">APLIKASI <?php echo form_error('APLIKASI') ?></label>
-            <input type="text" class="form-control" name="APLIKASI" id="APLIKASI" placeholder="APLIKASI" value="<?php echo $APLIKASI; ?>" />
-        </div>
-	    <input type="hidden" name="ID" value="<?php echo $ID; ?>" /> 
-	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('jenis_referensi') ?>" class="btn btn-default">Cancel</a>
-	</form>
-    </body>
+					<form action="<?php echo $action; ?>" method="post">
+						<div class="form-group">
+							<label for="varchar">DESKRIPSI <?php echo form_error('DESKRIPSI') ?></label>
+							<input type="text" class="form-control" name="DESKRIPSI" id="DESKRIPSI"
+								placeholder="DESKRIPSI" value="<?php echo $DESKRIPSI; ?>" />
+						</div>
+						
+                        <div class="form-group">
+							<label for="char">SINGKATAN <?php echo form_error('SINGKATAN') ?></label>
+							<input type="text" class="form-control" name="SINGKATAN" id="SINGKATAN"
+								placeholder="SINGKATAN" value="<?php echo $SINGKATAN; ?>" />
+						</div>
+						
+                        <div class="form-group">
+							<label for="tinyint">APLIKASI <?php echo form_error('APLIKASI') ?></label>
+							<input type="text" class="form-control" name="APLIKASI" id="APLIKASI" placeholder="APLIKASI"
+								value="<?php echo $APLIKASI; ?>" />
+						</div>
+						
+                        <input type="hidden" name="ID" value="<?php echo $ID; ?>" />
+						<button type="submit" class="btn btn-primary"><?php echo $button ?></button>
+						<a href="<?php echo site_url('jenis_referensi') ?>" class="btn btn-default">Cancel</a>
+					</form>
+				</div>
+			</div>
+		</div>
+    </div>
+
+</body>
+
 </html>
