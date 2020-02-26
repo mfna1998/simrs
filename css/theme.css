@@ -831,6 +831,7 @@ section {
     position: relative;
     right: 0;
     min-width: 65px;
+    min-height: 45px;
     line-height: 43px;
     border: 1px solid #e5e5e5;
     -webkit-border-radius: 3px;
