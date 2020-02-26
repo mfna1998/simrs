@@ -95,7 +95,7 @@
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap">
-					<form action="<?php echo site_url('pasien/index'); ?>" class="form-inline" method="get">
+					<form action="<?php echo site_url('pasien'); ?>" class="form-inline" method="get">
                             <input class="au-input au-input--xl" type="text" name="q" value="<?php echo $q; ?>" placeholder="Search for datas &amp; reports..." />
                             
                             <span class="input-group-btn">

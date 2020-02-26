@@ -18,11 +18,11 @@ class Pasien extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'pasien/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'pasien/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'pasien?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'pasien?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'pasien/index.html';
-            $config['first_url'] = base_url() . 'pasien/index.html';
+            $config['base_url'] = base_url() . 'pasien';
+            $config['first_url'] = base_url() . 'pasien';
         }
 
         $config['per_page'] = 10;
