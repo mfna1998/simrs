@@ -8,7 +8,7 @@
 	<meta name="author" content="Hau Nguyen">
 	<meta name="keywords" content="au theme template">
 
-	<title>Jenis Referensi</title>
+	<title>List Data Patients</title>
 
 	<link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
 	<link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
@@ -61,9 +61,23 @@
 							<i class="fas fa-table"></i>Tables</a>
 					</li>
 
-					<li>
-						<a href="form.html">
-							<i class="far fa-check-square"></i>Forms</a>
+					<li class="has-sub">
+						<a class="js-arrow" href="#">
+							<i class="fas fa-copy"></i>Forms</a>
+
+						<ul class="list-unstyled navbar__sub-list js-sub-list">
+							<li>
+								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
+							</li>
+
+							<li>
+								<a href="register.html">Register</a>
+							</li>
+
+							<li>
+								<a href="forget-pass.html">Forget Password</a>
+							</li>
+						</ul>
 					</li>
 
 					<li class="has-sub">
@@ -180,14 +194,14 @@
 					<br>
 					<div class="row" style="margin-bottom: 10px">
 						<div class="col-md-6">
-							<?php echo anchor(site_url('pasien/create'),'Create', 'class="btn btn-success"'); ?>
+							<?php echo anchor(site_url('pasien/create'),'Add New Patient', 'class="btn btn-primary"'); ?>
 						</div>
 						<div class="col-md-6 text-center">
 							<div style="margin-top: 8px" id="message">
 								<?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
 							</div>
 						</div>
-						<div class="table-responsive" style="overflow-x:hidden;">
+						<div class="table-responsive x" style="overflow-x:hidden;">
 							<table class="table table-data2">
 								<thead>
 									<tr>
@@ -223,6 +237,7 @@
                                         ?>
 									</td>
 								</tr>
+								<tr class="spacer"></tr>
 								<?php
                                 }
                                 ?>
@@ -230,7 +245,7 @@
 							<br>
 							<div class="row">
 								<div class="col-md-6">
-									<a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
+									<a href="#" class="btn btn-info">Total Record : <?php echo $total_rows ?></a>
 								</div>
 								<div class="col-md-6">
 									<?php echo $pagination ?>
