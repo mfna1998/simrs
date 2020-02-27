@@ -211,6 +211,8 @@
 										<th>GOLONGAN DARAH</th>
 										<th>TUJUANPERIKSA</th>
 										<th>JENIS PASIEN</th>
+										
+										
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -225,6 +227,7 @@
 									<td><?php echo $pasien->GOLONGAN_DARAH ?></td>
 									<td><?php echo $pasien->TUJUANPERIKSA ?></td>
 									<td><?php echo $pasien->JENIS_PASIEN ?></td>
+								
 									<td style="text-align:center" width="200px">
 										<?php 
                                         echo anchor(site_url('pasien/read/'.$pasien->NORM), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye"');

@@ -6,8 +6,8 @@ if (!defined('BASEPATH'))
 class Pasien_model extends CI_Model
 {
 
-    public $table = 'pasien';
-    public $id = 'NORM';
+	public $table 	= 'pasien';
+    public $id = 'pasien.NORM';
     public $order = 'DESC';
 
     function __construct()
@@ -17,22 +17,32 @@ class Pasien_model extends CI_Model
 
     // get all
     function get_all()
-    {
-        $this->db->order_by($this->id, $this->order);
+    {	
+		$this->db->join('kontak_pasien', 'kontak_pasien.NORM = pasien.NORM');
+		$this->db->join('referensi', 'referensi.JENIS = pasien.JENIS_PASIEN');
+		// $this->db->join('kontak_keluarga_pasien', 'kontak_keluarga_pasien.NORM = pasien.NORM');
+		// $this->db->join('keluarga_pasien', 'keluarga_pasien.NORM = kontak_keluarga_pasien.NORM');
+		$this->db->order_by($this->id, $this->order);
         return $this->db->get($this->table)->result();
     }
 
     // get data by id
     function get_by_id($id)
     {
+		$this->db->join('kontak_pasien', 'kontak_pasien.NORM = pasien.NORM');
+		// $this->db->join('kontak_keluarga_pasien', 'kontak_keluarga_pasien.NORM = pasien.NORM');
+		// $this->db->join('keluarga_pasien', 'keluarga_pasien.NORM = kontak_keluarga_pasien.NORM');
         $this->db->where($this->id, $id);
         return $this->db->get($this->table)->row();
     }
     
     // get total rows
     function total_rows($q = NULL) {
-        $this->db->like('NORM', $q);
-	$this->db->or_like('NAMA', $q);
+	$this->db->join('kontak_pasien', 'kontak_pasien.NORM = pasien.NORM');
+	// $this->db->join('kontak_keluarga_pasien', 'kontak_keluarga_pasien.NORM = pasien.NORM');
+	// $this->db->join('keluarga_pasien', 'keluarga_pasien.NORM = kontak_keluarga_pasien.NORM');
+	$this->db->like($this->id, $q);
+	$this->db->or_like("NAMA", $q);
 	$this->db->or_like('PANGGILAN', $q);
 	$this->db->or_like('GELAR_DEPAN', $q);
 	$this->db->or_like('GELAR_BELAKANG', $q);
@@ -59,13 +69,16 @@ class Pasien_model extends CI_Model
 	$this->db->or_like('TANGGAL', $q);
 	$this->db->or_like('STATUS', $q);
 	$this->db->from($this->table);
-        return $this->db->count_all_results();
+    return $this->db->count_all_results();
     }
 
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $q = NULL) {
-        $this->db->order_by($this->id, $this->order);
-        $this->db->like('NORM', $q);
+	$this->db->join('kontak_pasien', 'kontak_pasien.NORM = pasien.NORM');
+	// $this->db->join('kontak_keluarga_pasien', 'kontak_keluarga_pasien.NORM = pasien.NORM');
+	// $this->db->join('keluarga_pasien', 'keluarga_pasien.NORM = kontak_keluarga_pasien.NORM');
+    $this->db->order_by($this->id, $this->order);
+    $this->db->like($this->id, $q);
 	$this->db->or_like('NAMA', $q);
 	$this->db->or_like('PANGGILAN', $q);
 	$this->db->or_like('GELAR_DEPAN', $q);
@@ -93,13 +106,14 @@ class Pasien_model extends CI_Model
 	$this->db->or_like('TANGGAL', $q);
 	$this->db->or_like('STATUS', $q);
 	$this->db->limit($limit, $start);
-        return $this->db->get($this->table)->result();
+	return $this->db->get($this->table)->result();
+}
     }
 
     // insert data
     function insert($data)
     {
-        $this->db->insert($this->table, $data);
+		$this->db->insert($this->table, $data);
     }
 
     // update data
@@ -116,7 +130,7 @@ class Pasien_model extends CI_Model
         $this->db->delete($this->table);
     }
 
-}
+
 
 /* End of file Pasien_model.php */
 /* Location: ./application/models/Pasien_model.php */

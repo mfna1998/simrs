@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>harviacode.com - codeigniter crud generator</title>
+        <title>SIMRS</title>
         <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
         <style>
             body{
@@ -37,6 +37,8 @@
 	    <tr><td>JENIS PASIEN</td><td><?php echo $JENIS_PASIEN; ?></td></tr>
 	    <tr><td>CEKNIK</td><td><?php echo $CEKNIK; ?></td></tr>
 	    <tr><td>TANGGAL</td><td><?php echo $TANGGAL; ?></td></tr>
+		<tr><td>JENIS KONTAK</td><td><?php echo $JENIS; ?></td></tr>
+	    <tr><td>NOMOR KONTAK</td><td><?php echo $NOMOR; ?></td></tr>
 	    <tr><td>STATUS</td><td><?php echo $STATUS; ?></td></tr>
 	    <tr><td></td><td><a href="<?php echo site_url('pasien') ?>" class="btn btn-default">Cancel</a></td></tr>
 	</table>
