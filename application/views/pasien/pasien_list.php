@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,19 +24,16 @@
 	<link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
 	<link href="css/theme.css" rel="stylesheet" media="all">
-
-
 </head>
 
 <body class="animsition">
-	<!-- HEADER DESKTOP-->
+	<!-- MENU SIDEBAR-->
 	<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
 			<a href="#">
-				<img src="images/icon/logo.png" style="width: 50px" alt="Cool Admin" />
+				<img src="images/icon/Logo-Dharmais.png" style="width: 70px; margin-left: 100%" />
 			</a>
 		</div>
-
 		<div class="menu-sidebar__content js-scrollbar1">
 			<nav class="navbar-sidebar">
 				<ul class="list-unstyled navbar__list">
@@ -50,49 +46,50 @@
 							</li>
 						</ul>
 					</li>
-
 					<li>
 						<a href="chart.html">
 							<i class="fas fa-chart-bar"></i>Charts</a>
 					</li>
-
-					<li class="active">
-						<a href="table.html">
-							<i class="fas fa-table"></i>Tables</a>
-					</li>
-
 					<li class="has-sub">
 						<a class="js-arrow" href="#">
-							<i class="fas fa-copy"></i>Forms</a>
-
+							<i class="fas fa-table"></i>Tables</a>
 						<ul class="list-unstyled navbar__sub-list js-sub-list">
 							<li>
-								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
+								<?php echo anchor(site_url('pasien'),'Patients'); ?>
 							</li>
-
 							<li>
 								<a href="register.html">Register</a>
 							</li>
-
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
 							</li>
 						</ul>
 					</li>
-
+					<li class="has-sub">
+						<a class="js-arrow" href="#">
+							<i class="far fa-check-square"></i>Forms</a>
+						<ul class="list-unstyled navbar__sub-list js-sub-list">
+							<li>
+								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
+							</li>
+							<li>
+								<a href="register.html">Register</a>
+							</li>
+							<li>
+								<a href="forget-pass.html">Forget Password</a>
+							</li>
+						</ul>
+					</li>
 					<li class="has-sub">
 						<a class="js-arrow" href="#">
 							<i class="fas fa-copy"></i>Pages</a>
-
 						<ul class="list-unstyled navbar__sub-list js-sub-list">
 							<li>
 								<a href="login.html">Login</a>
 							</li>
-
 							<li>
 								<a href="register.html">Register</a>
 							</li>
-
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
 							</li>
@@ -102,6 +99,8 @@
 			</nav>
 		</div>
 	</aside>
+	<!-- END MENU SIDEBAR-->
+
 	<!-- PAGE CONTAINER-->
 	<div class="page-container">
 		<!-- HEADER DESKTOP-->
@@ -117,37 +116,33 @@
 								<?php 
                                     if ($q <> '') {
                                     ?>
-								<a href="<?php echo site_url('pasien'); ?>" class="btn btn-default">Reset</a>
+								<a href="<?php echo site_url('pasien'); ?>" class="btn btn-primary">Reset</a>
 
 								<?php
                                     }
                                     ?>
-
-								<button class="au-btn--submit" type="submit">
+								<button class="btn btn-primary" type="submit">
 									<i class="zmdi zmdi-search"></i>
 								</button>
 							</span>
 						</form>
-
 						<div class="header-button">
 							<div class="account-wrap">
 								<div class="account-item clearfix js-item-menu">
 									<div class="image">
-										<img src="#" alt="User" />
+										<img src="images/icon/Logo-Dharmais.png" alt="User" />
 									</div>
 
 									<div class="content">
 										<a class="js-acc-btn" href="#">User</a>
 									</div>
-
 									<div class="account-dropdown js-dropdown">
 										<div class="info clearfix">
 											<div class="image">
 												<a href="#">
-													<img src="images/icon/avatar-01.jpg" alt="John Doe" />
+													<img src="images/icon/Logo-Dharmais.png" />
 												</a>
 											</div>
-
 											<div class="content">
 												<h5 class="name">
 													<a href="#">user</a>
@@ -156,24 +151,20 @@
 											</div>
 
 										</div>
-
 										<div class="account-dropdown__body">
 											<div class="account-dropdown__item">
 												<a href="#">
 													<i class="zmdi zmdi-account"></i>Account</a>
 											</div>
-
 											<div class="account-dropdown__item">
 												<a href="#">
 													<i class="zmdi zmdi-settings"></i>Setting</a>
 											</div>
-
 											<div class="account-dropdown__item">
 												<a href="#">
 													<i class="zmdi zmdi-money-box"></i>Billing</a>
 											</div>
 										</div>
-
 										<div class="account-dropdown__footer">
 											<a href="#">
 												<i class="zmdi zmdi-power"></i>Logout</a>
@@ -187,10 +178,11 @@
 			</div>
 		</header>
 		<!-- END HEADER DESKTOP-->
+
 		<div class="main-content">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
-					<h2 style="margin-top:0px">Data Pasien</h2>
+					<h2 style="margin-top:0px">List Data Patients</h2>
 					<br>
 					<div class="row" style="margin-bottom: 10px">
 						<div class="col-md-6">
