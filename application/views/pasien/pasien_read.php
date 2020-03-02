@@ -72,7 +72,7 @@
 								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
 							</li>
 							<li>
-								<a href="register.html">Register</a>
+							<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
 							</li>
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
@@ -291,7 +291,7 @@
 											<br>
 											<br>
 											<td><a href="<?php echo site_url('pasien') ?>"
-													class="btn btn-danger btn-lg">Close</a></td>
+													class="btn btn-danger">Close</a></td>
 										</tr>
 									</tbody>
 								</table>
