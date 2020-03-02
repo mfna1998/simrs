@@ -73,7 +73,7 @@
 								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
 							</li>
 							<li>
-								<a href="register.html">Register</a>
+							<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
 							</li>
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
@@ -274,7 +274,7 @@
 													<?php echo form_error('TANGGAL_LAHIR') ?></label>
 											</div>
 											<div class="col-12 col-md-4">
-												<input type="text" class="form-control" name="TANGGAL_LAHIR"
+												<input type="datetime-local" class="form-control" name="TANGGAL_LAHIR"
 													id="TANGGAL_LAHIR" value="<?php echo $TANGGAL_LAHIR; ?>" />
 											</div>
 											<div class="col col-md-2">
@@ -317,7 +317,7 @@
 													<?php echo form_error('TANGGAL') ?></label>
 											</div>
 											<div class="col-12 col-md-4">
-												<input type="text" class="form-control" name="TANGGAL" id="TANGGAL"
+												<input type="datetime-local" class="form-control" name="TANGGAL" id="TANGGAL"
 													value="<?php echo $TANGGAL; ?>" />
 											</div>
 										</div>
@@ -409,7 +409,6 @@
 										</div>
 								</div>
 								<div class="card-footer">
-									<form action="<?php echo $action; ?>" method="post">
 										<input type="hidden" name="NORM" value="<?php echo $NORM; ?>" />
 										<button type="submit" class="btn btn-primary"><?php echo $button ?></button>
 										<a href="<?php echo site_url('pasien') ?>" i class="btn btn-danger">Cancel</a>

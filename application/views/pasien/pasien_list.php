@@ -73,7 +73,7 @@
 								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
 							</li>
 							<li>
-								<a href="register.html">Register</a>
+							<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
 							</li>
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
@@ -111,7 +111,6 @@
 						<form action="<?php echo site_url('pasien'); ?>" class="form-inline" method="get">
 							<input class="au-input au-input--xl" type="text" name="q" value="<?php echo $q; ?>"
 								placeholder="Search for datas &amp; reports..." />
-
 							<span class="input-group-btn">
 								<?php 
                                     if ($q <> '') {
@@ -197,7 +196,7 @@
 							<table class="table table-data2">
 								<thead>
 									<tr>
-										<th>No</th>
+										<th>No.RM</th>
 										<th>NAMA</th>
 										<th>JENIS KELAMIN</th>
 										<th>GOLONGAN DARAH</th>
@@ -210,7 +209,7 @@
                                     foreach ($pasien_data as $pasien)
                                     {
                                 ?>
-								<tr>
+								<tr center>
 									<td width="80px"><?php echo ++$start ?></td>
 									<td><?php echo $pasien->NAMA ?></td>
 									<td><?php echo $pasien->JENIS_KELAMIN ?></td>
@@ -219,13 +218,13 @@
 									<td><?php echo $pasien->JENIS_PASIEN ?></td>
 									<td style="text-align:center" width="200px">
 										<?php 
-                                        echo anchor(site_url('pasien/read/'.$pasien->NORM), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye"');
+                                        echo anchor(site_url('pasien/read/'.$pasien->NORM), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye" title="Detail"');
                                         ?>
 										<?php	
-                                        echo anchor(site_url('pasien/update/'.$pasien->NORM),' ', 'i class="btn btn-outline-warning zmdi zmdi-edit"');
+                                        echo anchor(site_url('pasien/update/'.$pasien->NORM),' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"');
                                         ?>
-                                                                <?php	 
-                                        echo anchor(site_url('pasien/delete/'.$pasien->NORM),' ', 'i class="btn btn-outline-danger zmdi zmdi-delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+                                        <?php	 
+                                        echo anchor(site_url('pasien/delete/'.$pasien->NORM),' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
                                         ?>
 									</td>
 								</tr>
@@ -246,6 +245,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
 
 				<!-- Jquery JS-->
 				<script src="vendor/jquery-3.2.1.min.js"></script>
