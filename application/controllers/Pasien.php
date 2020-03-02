@@ -74,8 +74,6 @@ class Pasien extends CI_Controller
 		'JENIS_PASIEN' => $row->JENIS_PASIEN,
 		'CEKNIK' => $row->CEKNIK,
 		'TANGGAL' => $row->TANGGAL,
-		'JENIS' => $row->JENIS,
-		'NOMOR' => $row->NOMOR,
 		'STATUS' => $row->STATUS,
 	    );
             $this->load->view('pasien/pasien_read', $data);

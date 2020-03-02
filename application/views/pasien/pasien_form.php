@@ -274,7 +274,7 @@
 													<?php echo form_error('TANGGAL_LAHIR') ?></label>
 											</div>
 											<div class="col-12 col-md-4">
-												<input type="text" class="form-control" name="TANGGAL_LAHIR"
+												<input type="date" class="form-control" name="TANGGAL_LAHIR"
 													id="TANGGAL_LAHIR" value="<?php echo $TANGGAL_LAHIR; ?>" />
 											</div>
 											<div class="col col-md-2">
@@ -317,7 +317,7 @@
 													<?php echo form_error('TANGGAL') ?></label>
 											</div>
 											<div class="col-12 col-md-4">
-												<input type="text" class="form-control" name="TANGGAL" id="TANGGAL"
+												<input type="date" class="form-control" name="TANGGAL" id="TANGGAL"
 													value="<?php echo $TANGGAL; ?>" />
 											</div>
 										</div>
@@ -408,6 +408,7 @@
 											</div>
 										</div>
 								</div>
+								</form>
 								<div class="card-footer">
 									<form action="<?php echo $action; ?>" method="post">
 										<input type="hidden" name="NORM" value="<?php echo $NORM; ?>" />
