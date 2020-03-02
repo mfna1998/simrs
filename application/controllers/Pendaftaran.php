@@ -22,11 +22,11 @@ class Pendaftaran extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'pendaftaran/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'pendaftaran/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'pendaftaran?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'pendaftaran?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'pendaftaran/index.html';
-            $config['first_url'] = base_url() . 'pendaftaran/index.html';
+            $config['base_url'] = base_url() . 'pendaftaran';
+            $config['first_url'] = base_url() . 'pendaftaran';
         }
 
         $config['per_page'] = 10;
