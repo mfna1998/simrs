@@ -197,7 +197,7 @@ class Pasien extends CI_Controller
 		'TANGGAL' => set_value('TANGGAL', $row->TANGGAL),
 		'STATUS' => set_value('STATUS', $row->STATUS),
 	    );
-            $this->load->view('pasien/pasien_form', $data);
+            $this->load->view('pasien/pasien_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('pasien'));
