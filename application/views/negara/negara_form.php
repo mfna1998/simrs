@@ -73,7 +73,7 @@
 								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
 							</li>
 							<li>
-							<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
+								<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
 							</li>
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
@@ -182,9 +182,9 @@
 										</li>
 									</ul>
 								</div>
-								<div class="card-body card-block">
-									<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data"
-										class="form-horizontal">
+								<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data"
+									class="form-horizontal">
+									<div class="card-body card-block">
 										<div class="row form-group">
 											<div class="col col-md-2">
 												<label for="varchar">DESKRIPSI
@@ -213,13 +213,13 @@
 													placeholder="STATUS" value="<?php echo $STATUS; ?>" />
 											</div>
 										</div>
-								</div>
-								<div class="card-footer">
-									<input type="hidden" name="ID" value="<?php echo $ID; ?>" />
-									<button type="submit" class="btn btn-primary"><?php echo $button ?></button>
-									<a href="<?php echo site_url('negara') ?>" i class="btn btn-danger">Cancel</a>
-									</form>
-								</div>
+									</div>
+									<div class="card-footer">
+										<input type="hidden" name="ID" value="<?php echo $ID; ?>" />
+										<button type="submit" class="btn btn-primary"><?php echo $button ?></button>
+										<a href="<?php echo site_url('negara') ?>" i class="btn btn-danger">Cancel</a>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
