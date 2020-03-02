@@ -205,6 +205,7 @@
                                 <thead>
                                     <tr>
                                         <th>No.</th>
+                                        <th>ID</th>
                                         <th>DESKRIPSI</th>
                                         <th>SINGKATAN</th>
                                         <th>APLIKASI</th>
@@ -218,6 +219,7 @@
                                     ?>
                                     <tr>
                                         <td><?php echo ++$start ?></td>
+                                        <td><?php echo $jenis_referensi->ID ?></td>
                                         <td><?php echo $jenis_referensi->DESKRIPSI ?></td>
                                         <td><?php echo $jenis_referensi->SINGKATAN ?></td>
                                         <td><?php echo $jenis_referensi->APLIKASI ?></td>
