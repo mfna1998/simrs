@@ -408,7 +408,7 @@
 											</div>
 										</div>
 								</div>
-								</form>
+								
 								<div class="card-footer">
 										<input type="hidden" name="NORM" value="<?php echo $NORM; ?>" />
 										<button type="submit" class="btn btn-primary"><?php echo $button ?></button>
