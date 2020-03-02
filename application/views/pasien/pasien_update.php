@@ -272,7 +272,7 @@
 													<?php echo form_error('TANGGAL_LAHIR') ?></label>
 											</div>
 											<div class="col-12 col-md-4">
-												<input type="datetime-local" class="form-control" name="TANGGAL_LAHIR"
+												<input type="date" class="form-control" name="TANGGAL_LAHIR"
 													id="TANGGAL_LAHIR" value="<?php echo $TANGGAL_LAHIR; ?>" />
 											</div>
 											<div class="col col-md-2">
@@ -315,7 +315,7 @@
 													<?php echo form_error('TANGGAL') ?></label>
 											</div>
 											<div class="col-12 col-md-4">
-												<input type="datetime-local" class="form-control" name="TANGGAL"
+												<input type="date" class="form-control" name="TANGGAL"
 													id="TANGGAL" value="<?php echo $TANGGAL; ?>" />
 											</div>
 										</div>
