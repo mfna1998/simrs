@@ -8,7 +8,7 @@ class Pasien_model extends CI_Model
 
 	public $table = 'pasien';
     public $id = 'NORM';
-    public $order = 'DESC';
+    public $order = 'ASC';
 
     function __construct()
     {
@@ -22,7 +22,7 @@ class Pasien_model extends CI_Model
 		// $this->db->join('referensi', 'referensi.JENIS = pasien.JENIS_PASIEN');
 		// $this->db->join('kontak_keluarga_pasien', 'kontak_keluarga_pasien.NORM = pasien.NORM');
 		// $this->db->join('keluarga_pasien', 'keluarga_pasien.NORM = kontak_keluarga_pasien.NORM');
-		$this->db->order_by('pasien.NORM', $this->order);
+		$this->db->order_by($this->id, $this->order);
         return $this->db->get($this->table)->result();
     }
 
@@ -32,7 +32,7 @@ class Pasien_model extends CI_Model
 		// $this->db->join('kontak_pasien', 'kontak_pasien.NORM = pasien.NORM');
 		// $this->db->join('kontak_keluarga_pasien', 'kontak_keluarga_pasien.NORM = pasien.NORM');
 		// $this->db->join('keluarga_pasien', 'keluarga_pasien.NORM = kontak_keluarga_pasien.NORM');
-        $this->db->where('pasien.NORM', $id);
+        $this->db->where($this->id, $id);
         return $this->db->get($this->table)->row();
     }
     
@@ -41,7 +41,7 @@ class Pasien_model extends CI_Model
 	// $this->db->join('kontak_pasien', 'kontak_pasien.NORM = pasien.NORM');
 	// $this->db->join('kontak_keluarga_pasien', 'kontak_keluarga_pasien.NORM = pasien.NORM');
 	// $this->db->join('keluarga_pasien', 'keluarga_pasien.NORM = kontak_keluarga_pasien.NORM');
-	$this->db->like('pasien.NORM', $q);
+	$this->db->like('NORM', $q);
 	$this->db->or_like("NAMA", $q);
 	$this->db->or_like('PANGGILAN', $q);
 	$this->db->or_like('GELAR_DEPAN', $q);
@@ -77,8 +77,8 @@ class Pasien_model extends CI_Model
 	// $this->db->join('kontak_pasien', 'kontak_pasien.NORM = pasien.NORM');
 	// $this->db->join('kontak_keluarga_pasien', 'kontak_keluarga_pasien.NORM = pasien.NORM');
 	// $this->db->join('keluarga_pasien', 'keluarga_pasien.NORM = kontak_keluarga_pasien.NORM');
-    $this->db->order_by('pasien.NORM', $this->order);
-    $this->db->like('pasien.NORM', $q);
+    $this->db->order_by($this->id, $this->order);
+    $this->db->like('NORM', $q);
 	$this->db->or_like('NAMA', $q);
 	$this->db->or_like('PANGGILAN', $q);
 	$this->db->or_like('GELAR_DEPAN', $q);
