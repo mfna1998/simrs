@@ -58,7 +58,7 @@
 								<?php echo anchor(site_url('pasien'),'Patients'); ?>
 							</li>
 							<li>
-								<a href="register.html">Register</a>
+							<?php echo anchor(site_url('negara'),'Nations'); ?>
 							</li>
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
@@ -202,8 +202,6 @@
 										<th>GOLONGAN DARAH</th>
 										<th>TUJUANPERIKSA</th>
 										<th>JENIS PASIEN</th>
-										
-										
 										<th>Action</th>
 									</tr>
 								</thead>
