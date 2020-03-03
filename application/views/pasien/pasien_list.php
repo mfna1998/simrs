@@ -211,7 +211,7 @@
                                     {
                                 ?>
 								<tr center>
-									<td width="80px"><?php echo ++$start ?></td>
+									<td width="80px" style="padding-top:34px"><?php echo ++$start ?></td>
 									<td><?php echo $pasien->NAMA ?></td>
 									<td><?php echo $pasien->JENIS_KELAMIN ?></td>
 									<td><?php echo $pasien->GOLONGAN_DARAH ?></td>

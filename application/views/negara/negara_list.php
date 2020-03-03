@@ -210,7 +210,7 @@
                                         {
                                     ?>
 									<tr>
-										<td width="80px"><?php echo ++$start ?></td>
+										<td width="80px"style="padding-top:34px"><?php echo ++$start ?></td>
 										<td><?php echo $negara->DESKRIPSI ?></td>
 										<td><?php echo $negara->SINGKATAN ?></td>
 										<td><?php echo $negara->STATUS ?></td>

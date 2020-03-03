@@ -68,11 +68,11 @@
 						<a class="js-arrow" href="#">
 							<i class="far fa-check-square"></i>Forms</a>
 						<ul class="list-unstyled navbar__sub-list js-sub-list">
-							<li>
-								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
+						<li>
+								<?php echo anchor(site_url('pasien/create'),'Patient Form'); ?>
 							</li>
 							<li>
-							<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
+							<?php echo anchor(site_url('negara/create'),'Nations Form'); ?>
 							</li>
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
