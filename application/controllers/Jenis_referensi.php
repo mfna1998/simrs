@@ -106,7 +106,7 @@ class Jenis_referensi extends CI_Controller
 		'SINGKATAN' => set_value('SINGKATAN', $row->SINGKATAN),
 		'APLIKASI' => set_value('APLIKASI', $row->APLIKASI),
 	    );
-            $this->load->view('jenis_referensi/jenis_referensi_form', $data);
+            $this->load->view('jenis_referensi/jenis_referensi_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('jenis_referensi'));

@@ -19,11 +19,11 @@ class Referensi extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'referensi/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'referensi/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'referensi?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'referensi?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'referensi/index.html';
-            $config['first_url'] = base_url() . 'referensi/index.html';
+            $config['base_url'] = base_url() . 'referensi';
+            $config['first_url'] = base_url() . 'referensi';
         }
 
         $config['per_page'] = 10;
@@ -105,7 +105,7 @@ class Referensi extends CI_Controller
 		'DESKRIPSI' => set_value('DESKRIPSI', $row->DESKRIPSI),
 		'STATUS' => set_value('STATUS', $row->STATUS),
 	    );
-            $this->load->view('referensi/referensi_form', $data);
+            $this->load->view('referensi/referensi_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('referensi'));

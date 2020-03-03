@@ -19,11 +19,11 @@ class Keluarga_pasien extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'keluarga_pasien/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'keluarga_pasien/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'keluarga_pasien?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'keluarga_pasien?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'keluarga_pasien/index.html';
-            $config['first_url'] = base_url() . 'keluarga_pasien/index.html';
+            $config['base_url'] = base_url() . 'keluarga_pasien';
+            $config['first_url'] = base_url() . 'keluarga_pasien';
         }
 
         $config['per_page'] = 10;
@@ -122,7 +122,7 @@ class Keluarga_pasien extends CI_Controller
 		'PENDIDIKAN' => set_value('PENDIDIKAN', $row->PENDIDIKAN),
 		'PEKERJAAN' => set_value('PEKERJAAN', $row->PEKERJAAN),
 	    );
-            $this->load->view('keluarga_pasien/keluarga_pasien_form', $data);
+            $this->load->view('keluarga_pasien/keluarga_pasien_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('keluarga_pasien'));

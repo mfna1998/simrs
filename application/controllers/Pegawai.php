@@ -19,11 +19,11 @@ class Pegawai extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'pegawai/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'pegawai/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'pegawai?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'pegawai?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'pegawai/index.html';
-            $config['first_url'] = base_url() . 'pegawai/index.html';
+            $config['base_url'] = base_url() . 'pegawai';
+            $config['first_url'] = base_url() . 'pegawai';
         }
 
         $config['per_page'] = 10;
@@ -158,7 +158,7 @@ class Pegawai extends CI_Controller
 		'WILAYAH' => set_value('WILAYAH', $row->WILAYAH),
 		'STATUS' => set_value('STATUS', $row->STATUS),
 	    );
-            $this->load->view('pegawai/pegawai_form', $data);
+            $this->load->view('pegawai/pegawai_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('pegawai'));

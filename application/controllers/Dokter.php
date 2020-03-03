@@ -19,11 +19,11 @@ class Dokter extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'dokter/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'dokter/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'dokter?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'dokter?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'dokter/index.html';
-            $config['first_url'] = base_url() . 'dokter/index.html';
+            $config['base_url'] = base_url() . 'dokter';
+            $config['first_url'] = base_url() . 'dokter';
         }
 
         $config['per_page'] = 10;
@@ -118,7 +118,7 @@ class Dokter extends CI_Controller
 		'HAFIS' => set_value('HAFIS', $row->HAFIS),
 		'STATUS' => set_value('STATUS', $row->STATUS),
 	    );
-            $this->load->view('dokter/dokter_form', $data);
+            $this->load->view('dokter/dokter_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('dokter'));

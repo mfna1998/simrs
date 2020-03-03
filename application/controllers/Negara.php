@@ -19,11 +19,11 @@ class Negara extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'negara/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'negara/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'negara?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'negara?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'negara/index.html';
-            $config['first_url'] = base_url() . 'negara/index.html';
+            $config['base_url'] = base_url() . 'negara';
+            $config['first_url'] = base_url() . 'negara';
         }
 
         $config['per_page'] = 10;
@@ -106,7 +106,7 @@ class Negara extends CI_Controller
 		'SINGKATAN' => set_value('SINGKATAN', $row->SINGKATAN),
 		'STATUS' => set_value('STATUS', $row->STATUS),
 	    );
-            $this->load->view('negara/negara_form', $data);
+            $this->load->view('negara/negara_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('negara'));

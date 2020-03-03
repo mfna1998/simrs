@@ -19,11 +19,11 @@ class Kontak_pegawai extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'kontak_pegawai/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'kontak_pegawai/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'kontak_pegawai?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'kontak_pegawai?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'kontak_pegawai/index.html';
-            $config['first_url'] = base_url() . 'kontak_pegawai/index.html';
+            $config['base_url'] = base_url() . 'kontak_pegawai';
+            $config['first_url'] = base_url() . 'kontak_pegawai';
         }
 
         $config['per_page'] = 10;
@@ -100,7 +100,7 @@ class Kontak_pegawai extends CI_Controller
 		'NIP' => set_value('NIP', $row->NIP),
 		'NOMOR' => set_value('NOMOR', $row->NOMOR),
 	    );
-            $this->load->view('kontak_pegawai/kontak_pegawai_form', $data);
+            $this->load->view('kontak_pegawai/kontak_pegawai_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kontak_pegawai'));

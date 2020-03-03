@@ -19,11 +19,11 @@ class Ruangan extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'ruangan/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'ruangan/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'ruangan?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'ruangan?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'ruangan/index.html';
-            $config['first_url'] = base_url() . 'ruangan/index.html';
+            $config['base_url'] = base_url() . 'ruangan';
+            $config['first_url'] = base_url() . 'ruangan';
         }
 
         $config['per_page'] = 10;
@@ -110,7 +110,7 @@ class Ruangan extends CI_Controller
 		'DESKRIPSI' => set_value('DESKRIPSI', $row->DESKRIPSI),
 		'STATUS' => set_value('STATUS', $row->STATUS),
 	    );
-            $this->load->view('ruangan/ruangan_form', $data);
+            $this->load->view('ruangan/ruangan_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('ruangan'));

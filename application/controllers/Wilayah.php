@@ -19,11 +19,11 @@ class Wilayah extends CI_Controller
         $start = intval($this->input->get('start'));
         
         if ($q <> '') {
-            $config['base_url'] = base_url() . 'wilayah/index.html?q=' . urlencode($q);
-            $config['first_url'] = base_url() . 'wilayah/index.html?q=' . urlencode($q);
+            $config['base_url'] = base_url() . 'wilayah?q=' . urlencode($q);
+            $config['first_url'] = base_url() . 'wilayah?q=' . urlencode($q);
         } else {
-            $config['base_url'] = base_url() . 'wilayah/index.html';
-            $config['first_url'] = base_url() . 'wilayah/index.html';
+            $config['base_url'] = base_url() . 'wilayah';
+            $config['first_url'] = base_url() . 'wilayah';
         }
 
         $config['per_page'] = 10;
@@ -110,7 +110,7 @@ class Wilayah extends CI_Controller
 		'KOTA' => set_value('KOTA', $row->KOTA),
 		'STATUS' => set_value('STATUS', $row->STATUS),
 	    );
-            $this->load->view('wilayah/wilayah_form', $data);
+            $this->load->view('wilayah/wilayah_update', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('wilayah'));
