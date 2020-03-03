@@ -8,7 +8,7 @@ class Jenis_referensi_model extends CI_Model
 
     public $table = 'jenis_referensi';
     public $id = 'ID';
-    public $order = 'DESC';
+    public $order = 'ASC';
 
     function __construct()
     {

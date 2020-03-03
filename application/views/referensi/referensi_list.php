@@ -92,7 +92,7 @@
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
 					<div class="header-wrap">
-						<form action="<?php echo site_url('pasien'); ?>" class="form-inline" method="get">
+						<form action="<?php echo site_url('referensi'); ?>" class="form-inline" method="get">
 							<input class="au-input au-input--xl" type="text" name="q" value="<?php echo $q; ?>"
 								placeholder="Search for datas &amp; reports..." />
 
@@ -100,7 +100,7 @@
 								<?php 
                                     if ($q <> '') {
                                     ?>
-								<a href="<?php echo site_url('jenis_referensi'); ?>" class="btn btn-primary">Reset</a>
+								<a href="<?php echo site_url('referensi'); ?>" class="btn btn-primary">Reset</a>
 
 								<?php
                                     }
@@ -186,56 +186,40 @@
 					</div>
 
 					<div>
-						<form action="<?php echo site_url('jenis_referensi'); ?>" class="form-inline" method="get">
-							<div class="input-group">
-								<input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
-								<span class="input-group-btn">
-									<?php 
-                                    if ($q <> '') {
-                                    ?>
-									<a href="<?php echo site_url('jenis_referensi'); ?>"
-										class="btn btn-default">Reset</a>
-
-									<?php
-                                    }
-                                    ?>
-
-									<button class="btn btn-primary" type="submit">Search</button>
-								</span>
-							</div>
-						</form>
 						<div class="table-responsive x">
 							<table class="table table-data2">
-								<thead>
+								<thead align="center">
 									<tr>
-										<th>No</th>
+										<th>No.</th>
 										<th>JENIS</th>
 										<th>DESKRIPSI</th>
 										<th>STATUS</th>
 										<th>Action</th>
 									</tr>
 								</thead>
-								<?php
+								<tbody align="center">
+									<?php
             foreach ($referensi_data as $referensi)
             {
                 ?>
-								<tr>
-									<td><?php echo ++$start ?></td>
-									<td><?php echo $referensi->JENIS ?></td>
-									<td><?php echo $referensi->DESKRIPSI ?></td>
-									<td><?php echo $referensi->STATUS ?></td>
-									<td>
-										<?php 
+									<tr>
+										<td style="padding-top:34px"><?php echo ++$start ?></td>
+										<td><?php echo $referensi->JENIS ?></td>
+										<td><?php echo $referensi->DESKRIPSI ?></td>
+										<td><?php echo $referensi->STATUS ?></td>
+										<td>
+											<?php 
 				echo anchor(site_url('referensi/read/'.$referensi->JENIS), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye"');
 				echo anchor(site_url('referensi/update/'.$referensi->JENIS),' ', 'i class="btn btn-outline-warning zmdi zmdi-edit"');
 				echo anchor(site_url('referensi/delete/'.$referensi->JENIS),' ', 'i class="btn btn-outline-danger zmdi zmdi-delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 				?>
-									</td>
-								</tr>
-								<tr class="spacer"></tr>
-								<?php
+										</td>
+									</tr>
+									<tr class="spacer"></tr>
+									<?php
             }
-            ?>
+			?>
+								</tbody>
 							</table>
 							<div class="row">
 								<div class="col-md-6">

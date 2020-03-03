@@ -217,11 +217,9 @@
 								<td><?php echo $kontak_pasien->NOMOR ?></td>
 								<td>
 									<?php 
-				                        echo anchor(site_url('kontak_pasien/read/'.$kontak_pasien->JENIS),'Read'); 
-				                        echo ' | '; 
-				                        echo anchor(site_url('kontak_pasien/update/'.$kontak_pasien->JENIS),'Update'); 
-				                        echo ' | '; 
-				                        echo anchor(site_url('kontak_pasien/delete/'.$kontak_pasien->JENIS),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				                        echo anchor(site_url('kontak_pasien/read/'.$kontak_pasien->JENIS), 'i class="btn btn-outline-primary zmdi zmdi-eye"');
+				                        echo anchor(site_url('kontak_pasien/update/'.$kontak_pasien->JENIS), 'i class="btn btn-outline-warning zmdi zmdi-edit"');
+				                        echo anchor(site_url('kontak_pasien/delete/'.$kontak_pasien->JENIS), 'i class="btn btn-outline-danger zmdi zmdi-delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 				                    ?>
 								</td>
 							</tr>

@@ -90,14 +90,25 @@
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
 					<div class="header-wrap">
-						<form class="form-header" action="" method="POST">
-							<input class="au-input au-input--xl" type="text" name="search"
+						<form action="<?php echo site_url('kontak_keluarga_pasien'); ?>" class="form-inline"
+							method="get">
+							<input class="au-input au-input--xl" type="text" name="q" value="<?php echo $q; ?>"
 								placeholder="Search for datas &amp; reports..." />
 
-							<button class="au-btn--submit" type="submit">
-								<i class="zmdi zmdi-search"></i>
-							</button>
+							<span class="input-group-btn">
+								<?php 
+                                    if ($q <> '') {
+                                    ?>
+								<a href="<?php echo site_url('kontak_keluarga_pasien'); ?>"
+									class="btn btn-primary">Reset</a>
 
+								<?php
+                                    }
+                                    ?>
+								<button class="btn btn-primary" type="submit">
+									<i class="zmdi zmdi-search"></i>
+								</button>
+							</span>
 						</form>
 
 						<div class="header-button">
@@ -174,30 +185,12 @@
 						</div>
 
 						<div>
-							<form action="<?php echo site_url('kontak_keluarga_pasien/index'); ?>" class="form-inline"
-								method="get">
-								<div class="input-group">
-									<input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
-									<span class="input-group-btn">
-										<?php 
-                                if ($q <> '')
-                                {
-                                    ?>
-										<a href="<?php echo site_url('kontak_keluarga_pasien'); ?>"
-											class="btn btn-default">Reset</a>
-										<?php
-                                }
-                            ?>
-										<button class="btn btn-success" type="submit">Search</button>
-									</span>
-								</div>
-							</form>
 						</div>
 					</div>
 
-					<div class="table-responsive x" style="overflow-x:hidden;">
+					<div class="table-responsive x">
 						<table class="table table-data2">
-							<thead>
+							<thead align="center">
 								<tr>
 									<th>No</th>
 									<th>No. RM</th>
@@ -205,32 +198,32 @@
 									<th>SHDK</th>
 									<th>Action</th>
 								</tr>
-                            </thead>
-                            <?php
+							</thead>
+							<tbody align="center">
+								<?php
             					foreach ($kontak_keluarga_pasien_data as $kontak_keluarga_pasien) {
                 			?>
 
-							<tr>
-								<td><?php echo ++$start ?></td>
-								<td><?php echo $kontak_keluarga_pasien->NORM ?></td>
-								<td><?php echo $kontak_keluarga_pasien->JENIS ?></td>
-								<td><?php echo $kontak_keluarga_pasien->SHDK ?></td>
-								<td>
-									<?php 
-										echo anchor(site_url('kontak_keluarga_pasien/read/'.$kontak_keluarga_pasien->SHDK),'Detail'); 
-										echo ' | '; 
-										echo anchor(site_url('kontak_keluarga_pasien/update/'.$kontak_keluarga_pasien->SHDK),'Update'); 
-										echo ' | '; 
-										echo anchor(site_url('kontak_keluarga_pasien/delete/'.$kontak_keluarga_pasien->SHDK),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+								<tr>
+									<td style="padding-top:34px"><?php echo ++$start ?></td>
+									<td><?php echo $kontak_keluarga_pasien->NORM ?></td>
+									<td><?php echo $kontak_keluarga_pasien->JENIS ?></td>
+									<td><?php echo $kontak_keluarga_pasien->SHDK ?></td>
+									<td>
+										<?php 
+										echo anchor(site_url('kontak_keluarga_pasien/read/'.$kontak_keluarga_pasien->SHDK), 'i class="btn btn-outline-primary zmdi zmdi-eye"'); 
+										echo anchor(site_url('kontak_keluarga_pasien/update/'.$kontak_keluarga_pasien->SHDK), 'i class="btn btn-outline-warning zmdi zmdi-edit"'); 
+										echo anchor(site_url('kontak_keluarga_pasien/delete/'.$kontak_keluarga_pasien->SHDK), 'i class="btn btn-outline-danger zmdi zmdi-delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 									?>
-								</td>
-                            </tr>
-                            <tr class="spacer"></tr>
-							<?php
+									</td>
+								</tr>
+								<tr class="spacer"></tr>
+								<?php
             }
-            ?>
+			?>
+							</tbody>
 						</table>
-						
+
 						<div class="row">
 							<div class="col-md-6">
 								<a href="#" class="btn btn-success">Total Record : <?php echo $total_rows ?></a>
