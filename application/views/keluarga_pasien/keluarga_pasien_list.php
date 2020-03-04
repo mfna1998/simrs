@@ -32,7 +32,7 @@
 	<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
 			<a href="#">
-				<img src="images/icon/logo.png" style="width: 50px" alt="Cool Admin" />
+			<img src="images/icon/Logo-Dharmais.png" style="width: 70px; margin-left: 100%" />
 			</a>
 		</div>
 
@@ -172,7 +172,7 @@
 					<h2 style="margin-top:0px">Keluarga Pasien</h2>
 					<div class="row" style="margin-bottom: 10px">
 						<div class="col-md-4">
-							<?php echo anchor(site_url('keluarga_pasien/create'),'Create', 'class="btn btn-success"'); ?>
+							<?php echo anchor(site_url('keluarga_pasien/create'),'Create', 'class="btn btn-primary"'); ?>
 						</div>
 
 						<div class="col-md-4 text-center">
@@ -185,7 +185,7 @@
 						</div>
 					</div>
 
-					<div class="table-responsive x">
+					<div class="table-responsive x" style="overflow-x:hidden;">
 						<table class="table table-data2">
                             <thead align="center">
 							<tr>
@@ -214,13 +214,15 @@
 								<td><?php echo $keluarga_pasien->ALAMAT ?></td>
 								<td><?php echo $keluarga_pasien->PENDIDIKAN ?></td>
 								<td><?php echo $keluarga_pasien->PEKERJAAN ?></td>
-								<td>
+								<td style="text-align:center" width="200px">
 									<?php 
-				                    echo anchor(site_url('keluarga_pasien/read/'.$keluarga_pasien->SHDK), 'i class="btn btn-outline-primary zmdi zmdi-eye"'); 
-				                    echo ' | '; 
-				                    echo anchor(site_url('keluarga_pasien/update/'.$keluarga_pasien->SHDK), 'i class="btn btn-outline-warning zmdi zmdi-edit"'); 
-				                    echo ' | '; 
-				                    echo anchor(site_url('keluarga_pasien/delete/'.$keluarga_pasien->SHDK), 'i class="btn btn-outline-danger zmdi zmdi-delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				                echo anchor(site_url('keluarga_pasien/read/'.$keluarga_pasien->SHDK), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye" title="Detail"');
+				                ?>
+									<?php
+								echo anchor(site_url('keluarga_pasien/update/'.$keluarga_pasien->SHDK), ' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"'); 
+				                ?>
+									<?php
+				                echo anchor(site_url('keluarga_pasien/delete/'.$keluarga_pasien->SHDK), ' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 				                ?>
 								</td>
 							</tr>

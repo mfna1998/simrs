@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
-    <head>
-    <meta charset="UTF-8">
+
+<head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="au theme template">
 	<meta name="author" content="Hau Nguyen">
@@ -25,12 +26,13 @@
 	<link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
 	<link href="css/theme.css" rel="stylesheet" media="all">
-    </head>
-    <body>
-    <aside class="menu-sidebar d-none d-lg-block">
+</head>
+
+<body>
+	<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
 			<a href="#">
-				<img src="images/icon/logo.png" style="width: 50px" alt="Cool Admin" />
+				<img src="images/icon/Logo-Dharmais.png" style="width: 70px; margin-left: 100%" />
 			</a>
 		</div>
 
@@ -78,16 +80,15 @@
 				</ul>
 			</nav>
 		</div>
-    </aside>
-    <!-- PAGE CONTAINER-->
+	</aside>
+	<!-- PAGE CONTAINER-->
 	<div class="page-container">
 		<!-- HEADER DESKTOP-->
 		<header class="header-desktop">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
 					<div class="header-wrap">
-						<form action="<?php echo site_url('kontak_pegawai'); ?>" class="form-inline"
-							method="get">
+						<form action="<?php echo site_url('kontak_pegawai'); ?>" class="form-inline" method="get">
 							<input class="au-input au-input--xl" type="text" name="q" value="<?php echo $q; ?>"
 								placeholder="Search for datas &amp; reports..." />
 
@@ -95,8 +96,7 @@
 								<?php 
                                     if ($q <> '') {
                                     ?>
-								<a href="<?php echo site_url('kontak_pegawai'); ?>"
-									class="btn btn-primary">Reset</a>
+								<a href="<?php echo site_url('kontak_pegawai'); ?>" class="btn btn-primary">Reset</a>
 
 								<?php
                                     }
@@ -171,7 +171,7 @@
 					<h2 style="margin-top:0px">Kontak Pegawai</h2>
 					<div class="row" style="margin-bottom: 10px">
 						<div class="col-md-4">
-							<?php echo anchor(site_url('kontak_pegawai/create'),'Create', 'class="btn btn-success"'); ?>
+							<?php echo anchor(site_url('kontak_pegawai/create'),'Create', 'class="btn btn-primary"'); ?>
 						</div>
 
 						<div class="col-md-4 text-center">
@@ -184,32 +184,36 @@
 						</div>
 					</div>
 
-					<div class="table-responsive x">
+					<div class="table-responsive x" style="overflow-x:hidden;">
 						<table class="table table-data2">
 							<thead align="center">
-                            <tr>
-                <th>No.</th>
-                <th>JENIS</th>
-                <th>NIP</th>
-                <th>NOMOR</th>
-		        <th>Action</th>
-            </tr>
+								<tr>
+									<th>No.</th>
+									<th>JENIS</th>
+									<th>NIP</th>
+									<th>NOMOR</th>
+									<th>Action</th>
+								</tr>
 							</thead>
 							<tbody align="center">
-                            <?php
+								<?php
             foreach ($kontak_pegawai_data as $kontak_pegawai) {
                 ?>
 
 								<tr>
 									<td style="padding-top:34px"><?php echo ++$start ?></td>
-                                    <td><?php echo $kontak_pegawai->JENIS ?></td>
-                                    <td><?php echo $kontak_pegawai->NIP ?></td>
+									<td><?php echo $kontak_pegawai->JENIS ?></td>
+									<td><?php echo $kontak_pegawai->NIP ?></td>
 									<td><?php echo $kontak_pegawai->NOMOR ?></td>
-									<td>
-										<?php 
-										echo anchor(site_url('kontak_pegawai/read/'.$kontak_pegawai->JENIS), 'i class="btn btn-outline-primary zmdi zmdi-eye"'); 
-										echo anchor(site_url('kontak_pegawai/update/'.$kontak_pegawai->JENIS), 'i class="btn btn-outline-warning zmdi zmdi-edit"'); 
-										echo anchor(site_url('kontak_pegawai/delete/'.$kontak_pegawai->JENIS), 'i class="btn btn-outline-danger zmdi zmdi-delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+									<td style="text-align:center" width="200px">
+										<?php
+									echo anchor(site_url('kontak_pegawai/read/'.$kontak_pegawai->JENIS), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye" title="Detail"'); 
+									?>
+										<?php
+									echo anchor(site_url('kontak_pegawai/update/'.$kontak_pegawai->JENIS), ' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"'); 
+									?>
+										<?php
+									echo anchor(site_url('kontak_pegawai/delete/'.$kontak_pegawai->JENIS), ' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 									?>
 									</td>
 								</tr>
