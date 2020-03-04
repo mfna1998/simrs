@@ -4670,13 +4670,9 @@ section {
     color: #fa4251;
 }
 
-.table-data3 thead {
-    background: #333;
-}
-
 .table-data3 thead tr th {
     font-size: 16px;
-    color: #fff;
+    color: #000;
     font-weight: 400;
     text-transform: capitalize;
     padding: 18px 40px;

@@ -32,7 +32,7 @@
 	<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
 			<a href="#">
-				<img src="images/icon/logo.png" style="width: 50px" alt="Cool Admin" />
+			<img src="images/icon/Logo-Dharmais.png" style="width: 70px; margin-left: 100%" />
 			</a>
 		</div>
 
@@ -94,7 +94,7 @@
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
 					<div class="header-wrap">
-						<form action="<?php echo site_url('pasien'); ?>" class="form-inline" method="get">
+						<form action="<?php echo site_url('jenis_referensi'); ?>" class="form-inline" method="get">
 							<input class="au-input au-input--xl" type="text" name="q" value="<?php echo $q; ?>"
 								placeholder="Search for datas &amp; reports..." />
 
@@ -177,7 +177,7 @@
 					<h2 style="margin-top:0px">Jenis Referensi</h2>
 					<div class="row" style="margin-bottom: 10px">
 						<div class="col-md-4">
-							<?php echo anchor(site_url('jenis_referensi/create'),'Create', 'class="btn btn-success"'); ?>
+							<?php echo anchor(site_url('jenis_referensi/create'),'Create', 'class="btn btn-primary"'); ?>
 						</div>
 
 						<div class="col-md-4 text-center">
@@ -188,64 +188,49 @@
 					</div>
 
 					<div>
-						<form action="<?php echo site_url('jenis_referensi'); ?>" class="form-inline" method="get">
-							<div class="input-group">
-								<input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
-								<span class="input-group-btn">
-									<?php 
-                                    if ($q <> '') {
-                                    ?>
-									<a href="<?php echo site_url('jenis_referensi'); ?>"
-										class="btn btn-default">Reset</a>
-
-									<?php
-                                    }
-                                    ?>
-
-									<button class="btn btn-primary" type="submit">Search</button>
-								</span>
-							</div>
-						</form>
-
 						<div class="table-responsive x">
-							<table class="table table-data2">
-								<thead>
-									<tr>
-										<th>No.</th>
-										<th>ID</th>
-										<th>DESKRIPSI</th>
-										<th>SINGKATAN</th>
-										<th>APLIKASI</th>
-										<th>Action</th>
-									</tr>
-								</thead>
+						<table class="table table-data2">
+										<thead align="center">
+											<tr>
+												<!-- <th>No.</th> -->
+												<th>ID</th>
+												<th>DESKRIPSI</th>
+												<th>SINGKATAN</th>
+												<th>APLIKASI</th>
+												<th>Action</th>
+											</tr>
+										</thead>
 
-								<tbody>
-									<?php
+										<tbody align="center">
+											<?php
                                     foreach ($jenis_referensi_data as $jenis_referensi) {
                                     ?>
-									<tr>
-										<td><?php echo ++$start ?></td>
-										<td><?php echo $jenis_referensi->ID ?></td>
-										<td><?php echo $jenis_referensi->DESKRIPSI ?></td>
-										<td><?php echo $jenis_referensi->SINGKATAN ?></td>
-										<td><?php echo $jenis_referensi->APLIKASI ?></td>
-										<td>
-											<?php 
-                                            echo anchor(site_url('jenis_referensi/read/'.$jenis_referensi->ID), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye"');
-                                            echo anchor(site_url('jenis_referensi/update/'.$jenis_referensi->ID),' ', 'i class="btn btn-outline-warning zmdi zmdi-edit"'); 
-                                            echo anchor(site_url('jenis_referensi/delete/'.$jenis_referensi->ID),' ', 'i class="btn btn-outline-danger zmdi zmdi-delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
-                                            ?>
-										</td>
-									</tr>
-									<tr class="spacer"></tr>
+											<tr>
+												<!-- <td><?php echo ++$start ?></td> -->
+												<td style="padding-top:34px"><?php echo $jenis_referensi->ID ?></td>
+												<td><?php echo $jenis_referensi->DESKRIPSI ?></td>
+												<td><?php echo $jenis_referensi->SINGKATAN ?></td>
+												<td><?php echo $jenis_referensi->APLIKASI ?></td>
+												<td style="text-align:center" width="200px">
+													<?php 
+                                            	echo anchor(site_url('jenis_referensi/read/'.$jenis_referensi->ID), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye" title="Detail"');
+												?>
+													<?php
+												echo anchor(site_url('jenis_referensi/update/'.$jenis_referensi->ID), ' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"'); 
+												?>
+													<?php
+												echo anchor(site_url('jenis_referensi/delete/'.$jenis_referensi->ID), ' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+                                            	?>
+												</td>
+											</tr>
+											<tr class="spacer"></tr>
 
-									<?php
+											<?php
                                     }
                                     ?>
-								</tbody>
-							</table>
-						</div>
+										</tbody>
+									</table>
+								</div>
 					</div>
 
 					<div class="row">

@@ -89,14 +89,23 @@
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
 					<div class="header-wrap">
-						<form class="form-header" action="" method="POST">
-							<input class="au-input au-input--xl" type="text" name="search"
+					<form action="<?php echo site_url('kontak_pasien'); ?>" class="form-inline" method="get">
+							<input class="au-input au-input--xl" type="text" name="q" value="<?php echo $q; ?>"
 								placeholder="Search for datas &amp; reports..." />
 
-							<button class="au-btn--submit" type="submit">
-								<i class="zmdi zmdi-search"></i>
-							</button>
+							<span class="input-group-btn">
+								<?php 
+                                    if ($q <> '') {
+                                    ?>
+								<a href="<?php echo site_url('kontak_pasien'); ?>" class="btn btn-primary">Reset</a>
 
+								<?php
+                                    }
+                                    ?>
+								<button class="btn btn-primary" type="submit">
+									<i class="zmdi zmdi-search"></i>
+								</button>
+							</span>
 						</form>
 
 						<div class="header-button">
@@ -174,32 +183,11 @@
 
 						<div class="col-md-1 text-right">
 						</div>
-
-						<div class="col-md-3 text-right">
-							<form action="<?php echo site_url('kontak_pasien/index'); ?>" class="form-inline"
-								method="get">
-								<div class="input-group">
-									<input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
-									<span class="input-group-btn">
-										<?php 
-                                            if ($q <> '') {
-                                        ?>
-										<a href="<?php echo site_url('kontak_pasien'); ?>"
-											class="btn btn-default">Reset</a>
-										<?php
-                                        }
-                                        ?>
-
-										<button class="btn btn-primary" type="submit">Search</button>
-									</span>
-								</div>
-							</form>
-						</div>
 					</div>
 
 					<div class="table-responsive x" style="overflow-x:hidden;">
 						<table class="table table-data2">
-							<thead>
+							<thead align="center">
 								<tr>
 									<th>NORM</th>
 									<th>JENIS</th>
@@ -207,28 +195,33 @@
 									<th>ACTION</th>
 								</tr>
 							</thead>
+
+							<tbody align="center">
 							<?php
                                 foreach ($kontak_pasien_data as $kontak_pasien) {
                             ?>
 							<tr>
-								<td><?php echo ++$start ?></td>
+								<td style="padding-top:34px"><?php echo ++$start ?></td>
 								<td><?php echo $kontak_pasien->NORM ?></td>
 								<td><?php echo $kontak_pasien->JENIS ?></td>
 								<td><?php echo $kontak_pasien->NOMOR ?></td>
-								<td>
+								<td style="text-align:center" width="200px">
 									<?php 
-				                        echo anchor(site_url('kontak_pasien/read/'.$kontak_pasien->JENIS),'Read'); 
-				                        echo ' | '; 
-				                        echo anchor(site_url('kontak_pasien/update/'.$kontak_pasien->JENIS),'Update'); 
-				                        echo ' | '; 
-				                        echo anchor(site_url('kontak_pasien/delete/'.$kontak_pasien->JENIS),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
-				                    ?>
+				                echo anchor(site_url('kontak_pasien/read/'.$kontak_pasien->JENIS), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye" title="Detail"');
+								?>
+									<?php
+								echo anchor(site_url('kontak_pasien/update/'.$kontak_pasien->JENIS), ' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"');
+				                ?>
+									<?php
+								echo anchor(site_url('kontak_pasien/delete/'.$kontak_pasien->JENIS), ' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				                ?>
 								</td>
 							</tr>
 							<tr class="spacer"></tr>
 							<?php
                             }
                             ?>
+							</tbody>
 						</table>
 
 						<div class="row">

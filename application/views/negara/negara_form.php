@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Input Data Nation</title>
+	<title>Input Data Negara</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="au theme template">
@@ -177,7 +177,7 @@
 									<ul class="nav nav-tabs card-header-tabs">
 										<li class="nav-item">
 											<a class="nav-link active" href="#">
-												<h3>Input New Patient</h3>
+												<h3>Input Data Negara</h3>
 											</a>
 										</li>
 									</ul>

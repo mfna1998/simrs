@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
-    <head>
-    <meta charset="UTF-8">
+
+<head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="au theme template">
 	<meta name="author" content="Hau Nguyen">
@@ -22,8 +23,9 @@
 	<link href="../../vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
 	<link href="../../css/theme.css" rel="stylesheet" media="all">
-    </head>
-    <body class="animsition">
+</head>
+
+<body class="animsition">
 	<!-- MENU SIDEBAR-->
 	<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
@@ -70,7 +72,7 @@
 								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
 							</li>
 							<li>
-							<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
+								<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
 							</li>
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
@@ -162,9 +164,9 @@
 				</div>
 			</div>
 		</header>
-        <!-- END HEADER DESKTOP-->
-        
-    <div class="main-content">
+		<!-- END HEADER DESKTOP-->
+		<!-- MAIN CONTENT-->
+		<div class="main-content">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
 					<div class="col-lg-12">
@@ -181,9 +183,18 @@
 							<div class="table-responsive">
 								<table class="table table-top-campaign">
 									<tbody>
-                                    <tr><td>DESKRIPSI</td><td><?php echo $DESKRIPSI; ?></td></tr>
-                                    <tr><td>SINGKATAN</td><td><?php echo $SINGKATAN; ?></td></tr>
-                                    <tr><td>STATUS</td><td><?php echo $STATUS; ?></td></tr>
+										<tr>
+											<td>DESKRIPSI</td>
+											<td><?php echo $DESKRIPSI; ?></td>
+										</tr>
+										<tr>
+											<td>SINGKATAN</td>
+											<td><?php echo $SINGKATAN; ?></td>
+										</tr>
+										<tr>
+											<td>STATUS</td>
+											<td><?php echo $STATUS; ?></td>
+										</tr>
 										<tr>
 											<br>
 											<br>
@@ -221,5 +232,6 @@
 
 		<!-- Main JS-->
 		<script src="../../js/main.js"></script>
-        </body>
+</body>
+
 </html>

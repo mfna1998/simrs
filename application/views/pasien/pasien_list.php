@@ -200,8 +200,9 @@
 										<th>NAMA</th>
 										<th>JENIS KELAMIN</th>
 										<th>GOLONGAN DARAH</th>
-										<th>TUJUANPERIKSA</th>
+										<th>TUJUAN PERIKSA</th>
 										<th>JENIS PASIEN</th>
+										<th>STATUS</th>
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -210,12 +211,13 @@
                                     {
                                 ?>
 								<tr center>
-									<td width="80px"><?php echo ++$start ?></td>
+									<td width="80px" style="padding-top:34px"><?php echo ++$start ?></td>
 									<td><?php echo $pasien->NAMA ?></td>
 									<td><?php echo $pasien->JENIS_KELAMIN ?></td>
 									<td><?php echo $pasien->GOLONGAN_DARAH ?></td>
 									<td><?php echo $pasien->TUJUANPERIKSA ?></td>
 									<td><?php echo $pasien->JENIS_PASIEN ?></td>
+									<td><?php echo $pasien->STATUS ?></td>
 								
 									<td style="text-align:center" width="200px">
 										<?php 

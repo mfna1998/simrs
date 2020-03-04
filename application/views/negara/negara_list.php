@@ -8,7 +8,7 @@
 	<meta name="author" content="Hau Nguyen">
 	<meta name="keywords" content="au theme template">
 
-	<title>List Data Nations</title>
+	<title>Negara</title>
 
 	<link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
 	<link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
@@ -74,7 +74,7 @@
 								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
 							</li>
 							<li>
-                            <?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
+								<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
 							</li>
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
@@ -180,23 +180,23 @@
 		</header>
 		<!-- END HEADER DESKTOP-->
 
+		<!-- MAIN CONTENT-->
 		<div class="main-content">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
-					<h2 style="margin-top:0px">List Data Nation</h2>
-					<br>
+					<h2 style="margin-top:0px">List Negara</h2>
 					<div class="row" style="margin-bottom: 10px">
-						<div class="col-md-6">
-							<?php echo anchor(site_url('negara/create'),'Add New Nation', 'class="btn btn-primary"'); ?>
+						<div class="col-md-4">
+							<?php echo anchor(site_url('negara/create'),'Create', 'class="btn btn-primary"'); ?>
 						</div>
-						<div class="col-md-6 text-center">
+						<div class="col-md-4 text-center">
 							<div style="margin-top: 8px" id="message">
 								<?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
 							</div>
 						</div>
 						<div class="table-responsive x" style="overflow-x:hidden;">
 							<table class="table table-data2">
-								<thead>
+								<thead align="center">
 									<tr>
 										<th>No</th>
 										<th>DESKRIPSI</th>
@@ -205,12 +205,13 @@
 										<th>Action</th>
 									</tr>
                                 </thead>
+								<tbody align="center">
 									<?php
                                         foreach ($negara_data as $negara)
                                         {
                                     ?>
 									<tr>
-										<td width="80px"><?php echo ++$start ?></td>
+										<td style="padding-top:34px"><?php echo ++$start ?></td>
 										<td><?php echo $negara->DESKRIPSI ?></td>
 										<td><?php echo $negara->SINGKATAN ?></td>
 										<td><?php echo $negara->STATUS ?></td>
@@ -219,17 +220,18 @@
                                         echo anchor(site_url('negara/read/'.$negara->ID), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye" title="Detail"');
                                         ?>
 											<?php	
-                                        echo anchor(site_url('negara/update/'.$negara->ID),' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"');
+                                        echo anchor(site_url('negara/update/'.$negara->ID), ' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"');
                                         ?>
 											<?php	 
-                                        echo anchor(site_url('negara/delete/'.$negara->ID),' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+                                        echo anchor(site_url('negara/delete/'.$negara->ID), ' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
                                         ?>
-										</td>
-									</tr>
-									<tr class="spacer"></tr>
-									<?php
+									</td>
+								</tr>
+								<tr class="spacer"></tr>
+								<?php
                                     }
                                     ?>
+									</tbody>
 							</table>
 							<br>
 							<div class="row">
