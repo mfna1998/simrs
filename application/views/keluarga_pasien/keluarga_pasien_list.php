@@ -28,37 +28,60 @@
 	<link href="css/theme.css" rel="stylesheet" media="all">
 </head>
 
-<body>
-	<aside class="menu-sidebar d-none d-lg-block">
+<body class="animsition">
+<!-- MENU SIDEBAR-->
+<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
 			<a href="#">
-			<img src="images/icon/Logo-Dharmais.png" style="width: 70px; margin-left: 100%" />
+				<img src="images/icon/Logo-Dharmais.png" style="width: 70px; margin-left: 100%" />
 			</a>
 		</div>
-
 		<div class="menu-sidebar__content js-scrollbar1">
 			<nav class="navbar-sidebar">
 				<ul class="list-unstyled navbar__list">
 					<li class="has-sub">
 						<a class="js-arrow" href="#">
-							<i class="fas fa-tachometer-alt"></i>Data Pasien</a>
+							<i class="fas fa-tachometer-alt"></i>Dashboard</a>
+						<ul class="list-unstyled navbar__sub-list js-sub-list">
+							<li>
+								<a href="index.html">Dashboard 1</a>
+							</li>
+						</ul>
 					</li>
-
 					<li>
 						<a href="chart.html">
-							<i class="fas fa-chart-bar"></i>Jenis Referensi</a>
+							<i class="fas fa-chart-bar"></i>Charts</a>
 					</li>
-
-					<li class="active">
-						<a href="table.html">
-							<i class="fas fa-table"></i>Referensi</a>
+					<li class="has-sub">
+						<a class="js-arrow" href="#">
+							<i class="fas fa-copy"></i>Tables</a>
+						<ul class="list-unstyled navbar__sub-list js-sub-list">
+							<li>
+								<?php echo anchor(site_url('pasien'),'Patients'); ?>
+							</li>
+							<li>
+								<a href="register.html">Register</a>
+							</li>
+							<li>
+								<a href="forget-pass.html">Forget Password</a>
+							</li>
+						</ul>
 					</li>
-
-					<li>
-						<a href="form.html">
+					<li class="has-sub">
+						<a class="js-arrow" href="#">
 							<i class="far fa-check-square"></i>Forms</a>
+						<ul class="list-unstyled navbar__sub-list js-sub-list">
+							<li>
+								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
+							</li>
+							<li>
+								<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
+							</li>
+							<li>
+								<a href="forget-pass.html">Forget Password</a>
+							</li>
+						</ul>
 					</li>
-
 					<li class="has-sub">
 						<a class="js-arrow" href="#">
 							<i class="fas fa-copy"></i>Pages</a>
@@ -81,38 +104,19 @@
 			</nav>
 		</div>
 	</aside>
-
+	<!-- END MENU SIDEBAR-->
 	<!-- PAGE CONTAINER-->
 	<div class="page-container">
 		<!-- HEADER DESKTOP-->
 		<header class="header-desktop">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
-					<div class="header-wrap">
-					<form action="<?php echo site_url('keluarga_pasien'); ?>" class="form-inline" method="get">
-							<input class="au-input au-input--xl" type="text" name="q" value="<?php echo $q; ?>"
-								placeholder="Search for datas &amp; reports..." />
-
-							<span class="input-group-btn">
-								<?php 
-                                    if ($q <> '') {
-                                    ?>
-								<a href="<?php echo site_url('keluarga_pasien'); ?>" class="btn btn-primary">Reset</a>
-
-								<?php
-                                    }
-                                    ?>
-								<button class="btn btn-primary" type="submit">
-									<i class="zmdi zmdi-search"></i>
-								</button>
-							</span>
-						</form>
-
-						<div class="header-button">
+					<div class="header-wrap float-right">
+						<div class="header-button ">
 							<div class="account-wrap">
 								<div class="account-item clearfix js-item-menu">
 									<div class="image">
-										<img src="#" alt="User" />
+										<img src="images/icon/Logo-Dharmais.png" alt="User" />
 									</div>
 
 									<div class="content">
@@ -123,10 +127,9 @@
 										<div class="info clearfix">
 											<div class="image">
 												<a href="#">
-													<img src="images/icon/avatar-01.jpg" alt="John Doe" />
+													<img src="images/icon/Logo-Dharmais.png" alt="John Doe" />
 												</a>
 											</div>
-
 											<div class="content">
 												<h5 class="name">
 													<a href="#">user</a>
@@ -135,7 +138,6 @@
 											</div>
 
 										</div>
-
 										<div class="account-dropdown__body">
 											<div class="account-dropdown__item">
 												<a href="#">
@@ -152,7 +154,6 @@
 													<i class="zmdi zmdi-money-box"></i>Billing</a>
 											</div>
 										</div>
-
 										<div class="account-dropdown__footer">
 											<a href="#">
 												<i class="zmdi zmdi-power"></i>Logout</a>
@@ -166,6 +167,8 @@
 			</div>
 		</header>
 		<!-- END HEADER DESKTOP-->
+
+		<!-- MAIN CONTENT-->
 		<div class="main-content">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
@@ -247,6 +250,29 @@
 				</div>
 			</div>
 		</div>
+				<!-- Jquery JS-->
+				<script src="vendor/jquery-3.2.1.min.js"></script>
+		<!-- Bootstrap JS-->
+		<script src="vendor/bootstrap-4.1/popper.min.js"></script>
+		<script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+		<!-- Vendor JS       -->
+		<script src="vendor/slick/slick.min.js">
+		</script>
+		<script src="vendor/wow/wow.min.js"></script>
+		<script src="vendor/animsition/animsition.min.js"></script>
+		<script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+		</script>
+		<script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+		<script src="vendor/counter-up/jquery.counterup.min.js">
+		</script>
+		<script src="vendor/circle-progress/circle-progress.min.js"></script>
+		<script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+		<script src="vendor/chartjs/Chart.bundle.min.js"></script>
+		<script src="vendor/select2/select2.min.js">
+		</script>
+
+		<!-- Main JS-->
+		<script src="js/main.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
-    <head>
-    <meta charset="UTF-8">
+
+<head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="au theme template">
 	<meta name="author" content="Hau Nguyen">
@@ -22,8 +23,9 @@
 	<link href="../../vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
 	<link href="../../css/theme.css" rel="stylesheet" media="all">
-    </head>
-    <body class="animsition">
+</head>
+
+<body class="animsition">
 	<!-- MENU SIDEBAR-->
 	<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
@@ -100,7 +102,6 @@
 		</div>
 	</aside>
 	<!-- END MENU SIDEBAR-->
-
 	<!-- PAGE CONTAINER-->
 	<div class="page-container">
 		<!-- HEADER DESKTOP-->
@@ -114,11 +115,9 @@
 									<div class="image">
 										<img src="../../images/icon/Logo-Dharmais.png" alt="User" />
 									</div>
-
 									<div class="content">
 										<a class="js-acc-btn" href="#">User</a>
 									</div>
-
 									<div class="account-dropdown js-dropdown">
 										<div class="info clearfix">
 											<div class="image">
@@ -132,19 +131,16 @@
 												</h5>
 												<span class="email">user@example.com</span>
 											</div>
-
 										</div>
 										<div class="account-dropdown__body">
 											<div class="account-dropdown__item">
 												<a href="#">
 													<i class="zmdi zmdi-account"></i>Account</a>
 											</div>
-
 											<div class="account-dropdown__item">
 												<a href="#">
 													<i class="zmdi zmdi-settings"></i>Setting</a>
 											</div>
-
 											<div class="account-dropdown__item">
 												<a href="#">
 													<i class="zmdi zmdi-money-box"></i>Billing</a>
@@ -164,59 +160,52 @@
 		</header>
 		<!-- END HEADER DESKTOP-->
 
-    <!-- MAIN CONTENT-->
+		<!-- MAIN CONTENT-->
 		<div class="main-content">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
-					<div class="col-lg-12">
-						<div class="card-header">
-							<ul class="nav nav-tabs card-header-tabs">
-								<li class="nav-item">
-									<a class="nav-link active" href="#">
-										<h3>Detail Keluarga Pasien</h3>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="top-campaign">
-							<div class="table-responsive">
-								<table class="table table-top-campaign">
-									<tbody>
-										<tr>
-                                        <tr><td>NORM</td>
-                                        <td><?php echo $NORM; ?></td></tr>
-										</tr>
-										<tr>
-                                        <tr><td>JENIS KELAMIN</td>
-                                        <td><?php echo $JENIS_KELAMIN; ?></td></tr>
-										</tr>
-										<tr>
-                                        <tr><td>ID</td>
-                                        <td><?php echo $ID; ?></td></tr>
-										</tr>
-                                        <tr>
-                                        <tr><td>NAMA</td>
-                                        <td><?php echo $NAMA; ?></td></tr>
-										</tr>
-                                        <tr>
-                                        <tr><td>ALAMAT</td>
-                                        <td><?php echo $ALAMAT; ?></td></tr>
-										</tr>
-                                        <tr>
-                                        <tr><td>PENDIDIKAN</td>
-                                        <td><?php echo $PENDIDIKAN; ?></td></tr>
-                                        <tr>
-                                        <tr><td>PEKERJAAN</td>
-                                        <td><?php echo $PEKERJAAN; ?></td></tr>
-										</tr>
-										<tr>
-											<br>
-											<br>
-											<td><a href="<?php echo site_url('keluarga_pasien') ?>"
-													class="btn btn-danger">Close</a></td>
-										</tr>
-									</tbody>
-								</table>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="card">
+								<div class="card-header">
+									<ul class="nav nav-tabs card-header-tabs">
+										<li class="nav-item">
+											<a class="nav-link active" href="#">
+												<h3>Input New Patient</h3>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data"
+									class="form-horizontal">
+									<div class="card-body card-block">
+										<div class="row form-group">
+											<div class="col col-md-2">
+												<label for="varchar">DESKRIPSI
+													<?php echo form_error('DESKRIPSI') ?></label>
+											</div>
+											<div class="col-12 col-md-4">
+												<input type="text" class="form-control" name="DESKRIPSI" id="DESKRIPSI"
+													placeholder="DESKRIPSI" value="<?php echo $DESKRIPSI; ?>" />
+											</div>
+										</div>
+										<div class="row form-group">
+											<div class="col col-md-2">
+												<label for="tinyint">STATUS <?php echo form_error('STATUS') ?></label>
+
+											</div>
+											<div class="col-12 col-md-4">
+												<input type="text" class="form-control" name="STATUS" id="STATUS"
+													placeholder="STATUS" value="<?php echo $STATUS; ?>" />
+											</div>
+										</div>
+									</div>
+									<div class="card-footer">
+										<input type="hidden" name="ID" value="<?php echo $ID; ?>" />
+										<button type="submit" class="btn btn-primary"><?php echo $button ?></button>
+										<a href="<?php echo site_url('referensi') ?>" i class="btn btn-danger">Cancel</a>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -246,5 +235,6 @@
 
 		<!-- Main JS-->
 		<script src="../../js/main.js"></script>
-        </body>
+</body>
+
 </html>

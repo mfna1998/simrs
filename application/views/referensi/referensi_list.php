@@ -27,11 +27,15 @@
 	<link href="css/theme.css" rel="stylesheet" media="all">
 </head>
 
-<body>
+<body class="animsition">
 	<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
 			<a href="#">
+<<<<<<< HEAD
+				<img src="images/icon/Logo-Dharmais.png" style="width: 50px" alt="Cool Admin" />
+=======
 			<img src="images/icon/Logo-Dharmais.png" style="width: 70px; margin-left: 100%" />
+>>>>>>> 7ac65ae062e6b4b864b2854ed2a938cfb34d92f8
 			</a>
 		</div>
 
@@ -114,7 +118,11 @@
 						<div class="header-button">
 							<div class="account-wrap">
 								<div class="account-item clearfix js-item-menu">
+<<<<<<< HEAD
+									<div class="image">
+=======
 								<div class="image">
+>>>>>>> 7ac65ae062e6b4b864b2854ed2a938cfb34d92f8
 										<img src="images/icon/Logo-Dharmais.png" alt="User" />
 									</div>
 
@@ -126,7 +134,11 @@
 										<div class="info clearfix">
 										<div class="image">
 												<a href="#">
+<<<<<<< HEAD
+													<img src="images/icon/Logo-Dharmais.png" alt="John Doe" />
+=======
 													<img src="images/icon/Logo-Dharmais.png" />
+>>>>>>> 7ac65ae062e6b4b864b2854ed2a938cfb34d92f8
 												</a>
 											</div>
 
@@ -175,7 +187,7 @@
 					<h2 style="margin-top:0px">Referensi</h2>
 					<div class="row" style="margin-bottom: 10px">
 						<div class="col-md-4">
-							<?php echo anchor(site_url('jenis_referensi/create'),'Create', 'class="btn btn-success"'); ?>
+							<?php echo anchor(site_url('referensi/create'),'Create', 'class="btn btn-success"'); ?>
 						</div>
 
 						<div class="col-md-4 text-center">
@@ -229,6 +241,29 @@
 									<?php echo $pagination ?>
 								</div>
 							</div>
+							<!-- Jquery JS-->
+							<script src="vendor/jquery-3.2.1.min.js"></script>
+							<!-- Bootstrap JS-->
+							<script src="vendor/bootstrap-4.1/popper.min.js"></script>
+							<script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+							<!-- Vendor JS       -->
+							<script src="vendor/slick/slick.min.js">
+							</script>
+							<script src="vendor/wow/wow.min.js"></script>
+							<script src="vendor/animsition/animsition.min.js"></script>
+							<script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+							</script>
+							<script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+							<script src="vendor/counter-up/jquery.counterup.min.js">
+							</script>
+							<script src="vendor/circle-progress/circle-progress.min.js"></script>
+							<script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+							<script src="vendor/chartjs/Chart.bundle.min.js"></script>
+							<script src="vendor/select2/select2.min.js">
+							</script>
+
+							<!-- Main JS-->
+							<script src="js/main.js"></script>
 </body>
 
 </html>

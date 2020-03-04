@@ -175,7 +175,7 @@
 					<h2 style="margin-top:0px">Kontak Keluarga Pasien</h2>
 					<div class="row" style="margin-bottom: 10px">
 						<div class="col-md-4">
-							<?php echo anchor(site_url('keluarga_pasien/create'),'Create', 'class="btn btn-primary"'); ?>
+							<?php echo anchor(site_url('kontak_keluarga_pasien/create'),'Create', 'class="btn btn-primary"'); ?>
 						</div>
 
 						<div class="col-md-4 text-center">

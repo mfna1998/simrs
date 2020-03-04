@@ -74,7 +74,7 @@
 								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
 							</li>
 							<li>
-                            <?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
+								<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
 							</li>
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
@@ -180,6 +180,7 @@
 		</header>
 		<!-- END HEADER DESKTOP-->
 
+		<!-- MAIN CONTENT-->
 		<div class="main-content">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
@@ -224,10 +225,10 @@
 											<?php	 
                                         echo anchor(site_url('negara/delete/'.$negara->ID), ' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
                                         ?>
-										</td>
-									</tr>
-									<tr class="spacer"></tr>
-									<?php
+									</td>
+								</tr>
+								<tr class="spacer"></tr>
+								<?php
                                     }
                                     ?>
 									</tbody>
