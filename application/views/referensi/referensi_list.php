@@ -31,7 +31,11 @@
 	<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
 			<a href="#">
+<<<<<<< HEAD
 				<img src="images/icon/Logo-Dharmais.png" style="width: 50px" alt="Cool Admin" />
+=======
+			<img src="images/icon/Logo-Dharmais.png" style="width: 70px; margin-left: 100%" />
+>>>>>>> 7ac65ae062e6b4b864b2854ed2a938cfb34d92f8
 			</a>
 		</div>
 
@@ -114,7 +118,11 @@
 						<div class="header-button">
 							<div class="account-wrap">
 								<div class="account-item clearfix js-item-menu">
+<<<<<<< HEAD
 									<div class="image">
+=======
+								<div class="image">
+>>>>>>> 7ac65ae062e6b4b864b2854ed2a938cfb34d92f8
 										<img src="images/icon/Logo-Dharmais.png" alt="User" />
 									</div>
 
@@ -124,9 +132,13 @@
 
 									<div class="account-dropdown js-dropdown">
 										<div class="info clearfix">
-											<div class="image">
+										<div class="image">
 												<a href="#">
+<<<<<<< HEAD
 													<img src="images/icon/Logo-Dharmais.png" alt="John Doe" />
+=======
+													<img src="images/icon/Logo-Dharmais.png" />
+>>>>>>> 7ac65ae062e6b4b864b2854ed2a938cfb34d92f8
 												</a>
 											</div>
 
@@ -186,7 +198,7 @@
 					</div>
 
 					<div>
-						<div class="table-responsive x">
+						<div class="table-responsive x" style="overflow-x:hidden;">
 							<table class="table table-data2">
 								<thead align="center">
 									<tr>

@@ -8,7 +8,7 @@
 	<meta name="author" content="Hau Nguyen">
 	<meta name="keywords" content="au theme template">
 
-	<title>List Data Nations</title>
+	<title>Negara</title>
 
 	<link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
 	<link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
@@ -184,20 +184,19 @@
 		<div class="main-content">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
-					<h2 style="margin-top:0px">List Data Negara</h2>
-					<br>
+					<h2 style="margin-top:0px">List Negara</h2>
 					<div class="row" style="margin-bottom: 10px">
-						<div class="col-md-6">
-							<?php echo anchor(site_url('negara/create'),'Tambah Negara', 'class="btn btn-primary"'); ?>
+						<div class="col-md-4">
+							<?php echo anchor(site_url('negara/create'),'Create', 'class="btn btn-primary"'); ?>
 						</div>
-						<div class="col-md-6 text-center">
+						<div class="col-md-4 text-center">
 							<div style="margin-top: 8px" id="message">
 								<?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
 							</div>
 						</div>
 						<div class="table-responsive x" style="overflow-x:hidden;">
 							<table class="table table-data2">
-								<thead>
+								<thead align="center">
 									<tr>
 										<th>No</th>
 										<th>DESKRIPSI</th>
@@ -205,25 +204,26 @@
 										<th>STATUS</th>
 										<th>Action</th>
 									</tr>
-								</thead>
-								<?php
+                                </thead>
+								<tbody align="center">
+									<?php
                                         foreach ($negara_data as $negara)
                                         {
                                     ?>
-								<tr>
-									<td width="80px" style="padding-top:34px"><?php echo ++$start ?></td>
-									<td><?php echo $negara->DESKRIPSI ?></td>
-									<td><?php echo $negara->SINGKATAN ?></td>
-									<td><?php echo $negara->STATUS ?></td>
-									<td style="text-align:center" width="200px">
-										<?php 
+									<tr>
+										<td style="padding-top:34px"><?php echo ++$start ?></td>
+										<td><?php echo $negara->DESKRIPSI ?></td>
+										<td><?php echo $negara->SINGKATAN ?></td>
+										<td><?php echo $negara->STATUS ?></td>
+										<td style="text-align:center" width="200px">
+											<?php 
                                         echo anchor(site_url('negara/read/'.$negara->ID), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye" title="Detail"');
                                         ?>
-										<?php	
-                                        echo anchor(site_url('negara/update/'.$negara->ID),' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"');
+											<?php	
+                                        echo anchor(site_url('negara/update/'.$negara->ID), ' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"');
                                         ?>
-										<?php	 
-                                        echo anchor(site_url('negara/delete/'.$negara->ID),' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+											<?php	 
+                                        echo anchor(site_url('negara/delete/'.$negara->ID), ' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
                                         ?>
 									</td>
 								</tr>
@@ -231,6 +231,7 @@
 								<?php
                                     }
                                     ?>
+									</tbody>
 							</table>
 							<br>
 							<div class="row">

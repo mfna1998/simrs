@@ -32,7 +32,7 @@
 	<aside class="menu-sidebar d-none d-lg-block">
 		<div class="logo">
 			<a href="#">
-				<img src="images/icon/logo.png" style="width: 50px" alt="Cool Admin" />
+			<img src="images/icon/Logo-Dharmais.png" style="width: 70px; margin-left: 100%" />
 			</a>
 		</div>
 
@@ -177,7 +177,7 @@
 					<h2 style="margin-top:0px">Jenis Referensi</h2>
 					<div class="row" style="margin-bottom: 10px">
 						<div class="col-md-4">
-							<?php echo anchor(site_url('jenis_referensi/create'),'Create', 'class="btn btn-success"'); ?>
+							<?php echo anchor(site_url('jenis_referensi/create'),'Create', 'class="btn btn-primary"'); ?>
 						</div>
 
 						<div class="col-md-4 text-center">
@@ -211,12 +211,16 @@
 												<td><?php echo $jenis_referensi->DESKRIPSI ?></td>
 												<td><?php echo $jenis_referensi->SINGKATAN ?></td>
 												<td><?php echo $jenis_referensi->APLIKASI ?></td>
-												<td>
+												<td style="text-align:center" width="200px">
 													<?php 
-                                            echo anchor(site_url('jenis_referensi/read/'.$jenis_referensi->ID), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye"');
-                                            echo anchor(site_url('jenis_referensi/update/'.$jenis_referensi->ID),' ', 'i class="btn btn-outline-warning zmdi zmdi-edit"'); 
-                                            echo anchor(site_url('jenis_referensi/delete/'.$jenis_referensi->ID),' ', 'i class="btn btn-outline-danger zmdi zmdi-delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
-                                            ?>
+                                            	echo anchor(site_url('jenis_referensi/read/'.$jenis_referensi->ID), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye" title="Detail"');
+												?>
+													<?php
+												echo anchor(site_url('jenis_referensi/update/'.$jenis_referensi->ID), ' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"'); 
+												?>
+													<?php
+												echo anchor(site_url('jenis_referensi/delete/'.$jenis_referensi->ID), ' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+                                            	?>
 												</td>
 											</tr>
 											<tr class="spacer"></tr>
