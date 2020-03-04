@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Input Kontak Pegawai</title>
+	<title>Input Data Negara</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="au theme template">
@@ -165,6 +165,7 @@
 			</div>
 		</header>
 		<!-- END HEADER DESKTOP-->
+
 		<!-- MAIN CONTENT-->
 		<div class="main-content">
 			<div class="section__content section__content--p30">
@@ -201,23 +202,24 @@
 												<input type="text" class="form-control" name="NIP" id="NIP"
 													placeholder="NIP" value="<?php echo $NIP; ?>" />
 											</div>
+										</div>
+										<div class="row form-group">
 											<div class="col col-md-2">
 												<label for="varchar">NOMOR
-													<?php echo form_error('NOMOR') ?></label>
+                                                    <?php echo form_error('NOMOR') ?></label>
+
 											</div>
 											<div class="col-12 col-md-4">
 												<input type="text" class="form-control" name="NOMOR" id="NOMOR"
 													placeholder="NOMOR" value="<?php echo $NOMOR; ?>" />
 											</div>
 										</div>
-										
-                                        <div class="card-footer">
-											<input type="hidden" name="ID" value="<?php echo $ID; ?>" />
-											<button type="submit" class="btn btn-primary"><?php echo $button ?></button>
-											<a href="<?php echo site_url('negara') ?>" i
-												class="btn btn-danger">Cancel</a>
-										</div>
-                                    </div>
+									</div>
+									<div class="card-footer">
+										<input type="hidden" name="NIP" value="<?php echo $NIP; ?>" />
+										<button type="submit" class="btn btn-primary"><?php echo $button ?></button>
+										<a href="<?php echo site_url('negara') ?>" i class="btn btn-danger">Cancel</a>
+									</div>
 								</form>
 							</div>
 						</div>
@@ -225,7 +227,6 @@
 				</div>
 			</div>
 		</div>
-        
 		<!-- Jquery JS-->
 		<script src="../vendor/jquery-3.2.1.min.js"></script>
 		<!-- Bootstrap JS-->
