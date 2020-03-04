@@ -102,7 +102,6 @@
 		</div>
 	</aside>
 	<!-- END MENU SIDEBAR-->
-
 	<!-- PAGE CONTAINER-->
 	<div class="page-container">
 		<!-- HEADER DESKTOP-->
@@ -116,11 +115,9 @@
 									<div class="image">
 										<img src="../../images/icon/Logo-Dharmais.png" alt="User" />
 									</div>
-
 									<div class="content">
 										<a class="js-acc-btn" href="#">User</a>
 									</div>
-
 									<div class="account-dropdown js-dropdown">
 										<div class="info clearfix">
 											<div class="image">
@@ -134,19 +131,16 @@
 												</h5>
 												<span class="email">user@example.com</span>
 											</div>
-
 										</div>
 										<div class="account-dropdown__body">
 											<div class="account-dropdown__item">
 												<a href="#">
 													<i class="zmdi zmdi-account"></i>Account</a>
 											</div>
-
 											<div class="account-dropdown__item">
 												<a href="#">
 													<i class="zmdi zmdi-settings"></i>Setting</a>
 											</div>
-
 											<div class="account-dropdown__item">
 												<a href="#">
 													<i class="zmdi zmdi-money-box"></i>Billing</a>
@@ -165,44 +159,53 @@
 			</div>
 		</header>
 		<!-- END HEADER DESKTOP-->
+
 		<!-- MAIN CONTENT-->
 		<div class="main-content">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
-					<div class="col-lg-12">
-						<div class="card-header">
-							<ul class="nav nav-tabs card-header-tabs">
-								<li class="nav-item">
-									<a class="nav-link active" href="#">
-										<h3>Detail Patient</h3>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="top-campaign">
-							<div class="table-responsive">
-								<table class="table table-top-campaign">
-									<tbody>
-										<tr>
-											<td>DESKRIPSI</td>
-											<td><?php echo $DESKRIPSI; ?></td>
-										</tr>
-										<tr>
-											<td>SINGKATAN</td>
-											<td><?php echo $SINGKATAN; ?></td>
-										</tr>
-										<tr>
-											<td>STATUS</td>
-											<td><?php echo $STATUS; ?></td>
-										</tr>
-										<tr>
-											<br>
-											<br>
-											<td><a href="<?php echo site_url('negara') ?>"
-													class="btn btn-danger">Close</a></td>
-										</tr>
-									</tbody>
-								</table>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="card">
+								<div class="card-header">
+									<ul class="nav nav-tabs card-header-tabs">
+										<li class="nav-item">
+											<a class="nav-link active" href="#">
+												<h3>Input New Patient</h3>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data"
+									class="form-horizontal">
+									<div class="card-body card-block">
+										<div class="row form-group">
+											<div class="col col-md-2">
+												<label for="varchar">DESKRIPSI
+													<?php echo form_error('DESKRIPSI') ?></label>
+											</div>
+											<div class="col-12 col-md-4">
+												<input type="text" class="form-control" name="DESKRIPSI" id="DESKRIPSI"
+													placeholder="DESKRIPSI" value="<?php echo $DESKRIPSI; ?>" />
+											</div>
+										</div>
+										<div class="row form-group">
+											<div class="col col-md-2">
+												<label for="tinyint">STATUS <?php echo form_error('STATUS') ?></label>
+
+											</div>
+											<div class="col-12 col-md-4">
+												<input type="text" class="form-control" name="STATUS" id="STATUS"
+													placeholder="STATUS" value="<?php echo $STATUS; ?>" />
+											</div>
+										</div>
+									</div>
+									<div class="card-footer">
+										<input type="hidden" name="ID" value="<?php echo $ID; ?>" />
+										<button type="submit" class="btn btn-primary"><?php echo $button ?></button>
+										<a href="<?php echo site_url('referensi') ?>" i class="btn btn-danger">Cancel</a>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>

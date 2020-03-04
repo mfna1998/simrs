@@ -74,7 +74,7 @@
 								<?php echo anchor(site_url('pasien/create'),'Add New Patient'); ?>
 							</li>
 							<li>
-                            <?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
+								<?php echo anchor(site_url('negara/create'),'Add New Nations'); ?>
 							</li>
 							<li>
 								<a href="forget-pass.html">Forget Password</a>
@@ -180,14 +180,15 @@
 		</header>
 		<!-- END HEADER DESKTOP-->
 
+		<!-- MAIN CONTENT-->
 		<div class="main-content">
 			<div class="section__content section__content--p30">
 				<div class="container-fluid">
-					<h2 style="margin-top:0px">List Data Nation</h2>
+					<h2 style="margin-top:0px">List Data Negara</h2>
 					<br>
 					<div class="row" style="margin-bottom: 10px">
 						<div class="col-md-6">
-							<?php echo anchor(site_url('negara/create'),'Add New Nation', 'class="btn btn-primary"'); ?>
+							<?php echo anchor(site_url('negara/create'),'Tambah Negara', 'class="btn btn-primary"'); ?>
 						</div>
 						<div class="col-md-6 text-center">
 							<div style="margin-top: 8px" id="message">
@@ -204,30 +205,30 @@
 										<th>STATUS</th>
 										<th>Action</th>
 									</tr>
-                                </thead>
-									<?php
+								</thead>
+								<?php
                                         foreach ($negara_data as $negara)
                                         {
                                     ?>
-									<tr>
-										<td width="80px"style="padding-top:34px"><?php echo ++$start ?></td>
-										<td><?php echo $negara->DESKRIPSI ?></td>
-										<td><?php echo $negara->SINGKATAN ?></td>
-										<td><?php echo $negara->STATUS ?></td>
-										<td style="text-align:center" width="200px">
-											<?php 
+								<tr>
+									<td width="80px" style="padding-top:34px"><?php echo ++$start ?></td>
+									<td><?php echo $negara->DESKRIPSI ?></td>
+									<td><?php echo $negara->SINGKATAN ?></td>
+									<td><?php echo $negara->STATUS ?></td>
+									<td style="text-align:center" width="200px">
+										<?php 
                                         echo anchor(site_url('negara/read/'.$negara->ID), ' ', 'i class="btn btn-outline-primary zmdi zmdi-eye" title="Detail"');
                                         ?>
-											<?php	
+										<?php	
                                         echo anchor(site_url('negara/update/'.$negara->ID),' ', 'i class="btn btn-outline-warning zmdi zmdi-edit" title="Edit"');
                                         ?>
-											<?php	 
+										<?php	 
                                         echo anchor(site_url('negara/delete/'.$negara->ID),' ', 'i class="btn btn-outline-danger zmdi zmdi-delete" title="Delete"','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
                                         ?>
-										</td>
-									</tr>
-									<tr class="spacer"></tr>
-									<?php
+									</td>
+								</tr>
+								<tr class="spacer"></tr>
+								<?php
                                     }
                                     ?>
 							</table>
