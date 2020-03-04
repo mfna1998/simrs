@@ -56,7 +56,7 @@ class Referensi extends CI_Controller
 	    );
             $this->load->view('referensi/referensi_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Referensi Tidak Ditemukan');
             redirect(site_url('referensi'));
         }
     }
@@ -87,7 +87,7 @@ class Referensi extends CI_Controller
 	    );
 
             $this->Referensi_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Data Referensi Berhasil Ditambah');
             redirect(site_url('referensi'));
         }
     }
@@ -107,7 +107,7 @@ class Referensi extends CI_Controller
 	    );
             $this->load->view('referensi/referensi_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Referensi Tidak Ditemukan');
             redirect(site_url('referensi'));
         }
     }
@@ -125,7 +125,7 @@ class Referensi extends CI_Controller
 	    );
 
             $this->Referensi_model->update($this->input->post('JENIS', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Data Referensi Berhasil Dirubah');
             redirect(site_url('referensi'));
         }
     }
@@ -136,10 +136,10 @@ class Referensi extends CI_Controller
 
         if ($row) {
             $this->Referensi_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Data Referensi Berhasil Dihapus');
             redirect(site_url('referensi'));
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Referensi Tidak Ditemukan');
             redirect(site_url('referensi'));
         }
     }

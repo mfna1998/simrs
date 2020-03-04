@@ -60,7 +60,7 @@ class Keluarga_pasien extends CI_Controller
 	    );
             $this->load->view('keluarga_pasien/keluarga_pasien_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Keluarga Pasien Tidak Ditemukan');
             redirect(site_url('keluarga_pasien'));
         }
     }
@@ -100,7 +100,7 @@ class Keluarga_pasien extends CI_Controller
 	    );
 
             $this->Keluarga_pasien_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Data Keluarga Pasien Berhasil Ditambah');
             redirect(site_url('keluarga_pasien'));
         }
     }
@@ -124,7 +124,7 @@ class Keluarga_pasien extends CI_Controller
 	    );
             $this->load->view('keluarga_pasien/keluarga_pasien_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Keluarga Pasien Tidak Ditemukan');
             redirect(site_url('keluarga_pasien'));
         }
     }
@@ -147,7 +147,7 @@ class Keluarga_pasien extends CI_Controller
 	    );
 
             $this->Keluarga_pasien_model->update($this->input->post('SHDK', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Data Keluarga Pasien Berhasil Dirubah');
             redirect(site_url('keluarga_pasien'));
         }
     }
@@ -158,10 +158,10 @@ class Keluarga_pasien extends CI_Controller
 
         if ($row) {
             $this->Keluarga_pasien_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Data Keluarga Pasien Berhasil Dihapus');
             redirect(site_url('keluarga_pasien'));
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Keluarga Pasien Tidak Ditemukan');
             redirect(site_url('keluarga_pasien'));
         }
     }

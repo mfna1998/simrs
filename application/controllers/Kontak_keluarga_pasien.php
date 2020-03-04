@@ -56,7 +56,7 @@ class Kontak_keluarga_pasien extends CI_Controller
 	    );
             $this->load->view('kontak_keluarga_pasien/kontak_keluarga_pasien_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Kontak Keluarga Pasien Tidak Ditemukan');
             redirect(site_url('kontak_keluarga_pasien'));
         }
     }
@@ -85,7 +85,7 @@ class Kontak_keluarga_pasien extends CI_Controller
 	    );
 
             $this->Kontak_keluarga_pasien_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Kontak Keluarga Pasien Berhasil Ditambah');
             redirect(site_url('kontak_keluarga_pasien'));
         }
     }
@@ -105,7 +105,7 @@ class Kontak_keluarga_pasien extends CI_Controller
 	    );
             $this->load->view('kontak_keluarga_pasien/kontak_keluarga_pasien_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Kontak Keluarga Pasien Tidak Ditemukan');
             redirect(site_url('kontak_keluarga_pasien'));
         }
     }
@@ -121,7 +121,7 @@ class Kontak_keluarga_pasien extends CI_Controller
 	    );
 
             $this->Kontak_keluarga_pasien_model->update($this->input->post('SHDK', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Kontak Keluarga Pasien Berhasil Dirubah');
             redirect(site_url('kontak_keluarga_pasien'));
         }
     }
@@ -132,10 +132,10 @@ class Kontak_keluarga_pasien extends CI_Controller
 
         if ($row) {
             $this->Kontak_keluarga_pasien_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Kontak Keluarga Pasien Berhasil Dihapus');
             redirect(site_url('kontak_keluarga_pasien'));
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Kontak Keluarga Pasien Tidak Ditemukan');
             redirect(site_url('kontak_keluarga_pasien'));
         }
     }

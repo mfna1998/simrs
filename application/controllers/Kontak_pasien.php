@@ -55,7 +55,7 @@ class Kontak_pasien extends CI_Controller
 	    );
             $this->load->view('kontak_pasien/kontak_pasien_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Kontak Pasien Tidak Ditemukan');
             redirect(site_url('kontak_pasien'));
         }
     }
@@ -83,7 +83,7 @@ class Kontak_pasien extends CI_Controller
 	    );
 
             $this->Kontak_pasien_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Kontak Pasien Berhasil Ditambah');
             redirect(site_url('kontak_pasien'));
         }
     }
@@ -102,7 +102,7 @@ class Kontak_pasien extends CI_Controller
 	    );
             $this->load->view('kontak_pasien/kontak_pasien_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Kontak Pasien Tidak Ditemukan');
             redirect(site_url('kontak_pasien'));
         }
     }
@@ -118,7 +118,7 @@ class Kontak_pasien extends CI_Controller
 	    );
 
             $this->Kontak_pasien_model->update($this->input->post('JENIS', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Kontak Pasien Berhasil Dirubah');
             redirect(site_url('kontak_pasien'));
         }
     }
@@ -129,10 +129,10 @@ class Kontak_pasien extends CI_Controller
 
         if ($row) {
             $this->Kontak_pasien_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Kontak Pasien Berhasil Dihapus');
             redirect(site_url('kontak_pasien'));
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Kontak Pasien Tidak Ditemukan');
             redirect(site_url('kontak_pasien'));
         }
     }

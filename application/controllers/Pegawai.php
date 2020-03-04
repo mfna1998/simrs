@@ -69,7 +69,7 @@ class Pegawai extends CI_Controller
 	    );
             $this->load->view('pegawai/pegawai_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Pegawai Tidak Ditemukan');
             redirect(site_url('pegawai'));
         }
     }
@@ -108,6 +108,7 @@ class Pegawai extends CI_Controller
             $this->create();
         } else {
             $data = array(
+		'NIP' => $this->input->post('NIP',TRUE),
 		'NAMA' => $this->input->post('NAMA',TRUE),
 		'PANGGILAN' => $this->input->post('PANGGILAN',TRUE),
 		'GELAR_DEPAN' => $this->input->post('GELAR_DEPAN',TRUE),
@@ -127,7 +128,7 @@ class Pegawai extends CI_Controller
 	    );
 
             $this->Pegawai_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Data Pegawai Berhasil Ditambah');
             redirect(site_url('pegawai'));
         }
     }
@@ -160,7 +161,7 @@ class Pegawai extends CI_Controller
 	    );
             $this->load->view('pegawai/pegawai_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Pegawai Tidak Ditemukan');
             redirect(site_url('pegawai'));
         }
     }
@@ -192,7 +193,7 @@ class Pegawai extends CI_Controller
 	    );
 
             $this->Pegawai_model->update($this->input->post('NIP', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Data Pegawai Berhasil Dirubah');
             redirect(site_url('pegawai'));
         }
     }
@@ -203,10 +204,10 @@ class Pegawai extends CI_Controller
 
         if ($row) {
             $this->Pegawai_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Data Pegawai Berhasil Dihapus');
             redirect(site_url('pegawai'));
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Pegawai Tidak Ditemukan');
             redirect(site_url('pegawai'));
         }
     }

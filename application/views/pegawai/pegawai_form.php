@@ -12,6 +12,10 @@
     <body>
         <h2 style="margin-top:0px">Tambah Pegawai</h2>
         <form action="<?php echo $action; ?>" method="post">
+        <div class="form-group">
+            <label for="varchar">NIP <?php echo form_error('NIP') ?></label>
+            <input type="number" class="form-control" name="NIP" id="NIP" placeholder="NIP" value="<?php echo $NIP; ?>" />
+        </div>
 	    <div class="form-group">
             <label for="varchar">NAMA <?php echo form_error('NAMA') ?></label>
             <input type="text" class="form-control" name="NAMA" id="NAMA" placeholder="NAMA" value="<?php echo $NAMA; ?>" />

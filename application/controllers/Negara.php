@@ -56,7 +56,7 @@ class Negara extends CI_Controller
 	    );
             $this->load->view('negara/negara_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Negara Tidak Ditemukan');
             redirect(site_url('negara'));
         }
     }
@@ -88,7 +88,7 @@ class Negara extends CI_Controller
 	    );
 
             $this->Negara_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Data Negara Berhasil Ditambah');
             redirect(site_url('negara'));
         }
     }
@@ -108,7 +108,7 @@ class Negara extends CI_Controller
 	    );
             $this->load->view('negara/negara_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Negara Tidak Ditemukan');
             redirect(site_url('negara'));
         }
     }
@@ -127,7 +127,7 @@ class Negara extends CI_Controller
 	    );
 
             $this->Negara_model->update($this->input->post('ID', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Data Negara Berhasil Dirubah');
             redirect(site_url('negara'));
         }
     }
@@ -138,10 +138,10 @@ class Negara extends CI_Controller
 
         if ($row) {
             $this->Negara_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Data Negara Berhasil Dihapus');
             redirect(site_url('negara'));
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Negara Tidak Ditemukan');
             redirect(site_url('negara'));
         }
     }

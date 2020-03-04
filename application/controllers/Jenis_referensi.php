@@ -56,7 +56,7 @@ class Jenis_referensi extends CI_Controller
 	    );
             $this->load->view('jenis_referensi/jenis_referensi_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Jenis Referensi Tidak Ditemukan');
             redirect(site_url('jenis_referensi'));
         }
     }
@@ -88,7 +88,7 @@ class Jenis_referensi extends CI_Controller
 	    );
 
             $this->Jenis_referensi_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Jenis Referensi Berhasil Ditambah');
             redirect(site_url('jenis_referensi'));
         }
     }
@@ -108,7 +108,7 @@ class Jenis_referensi extends CI_Controller
 	    );
             $this->load->view('jenis_referensi/jenis_referensi_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Jenis Referensi Tidak Ditemukan');
             redirect(site_url('jenis_referensi'));
         }
     }
@@ -127,7 +127,7 @@ class Jenis_referensi extends CI_Controller
 	    );
 
             $this->Jenis_referensi_model->update($this->input->post('ID', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Jenis Referensi Berhasil Dirubah');
             redirect(site_url('jenis_referensi'));
         }
     }
@@ -138,10 +138,10 @@ class Jenis_referensi extends CI_Controller
 
         if ($row) {
             $this->Jenis_referensi_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Jenis Referensi Berhasil Dihapus');
             redirect(site_url('jenis_referensi'));
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Jenis Referensi Tidak Ditemukan');
             redirect(site_url('jenis_referensi'));
         }
     }

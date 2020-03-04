@@ -12,7 +12,7 @@ class Pendaftaran extends CI_Controller
         $this->load->model('Pasien_model');
         $this->load->model('Kontak_pasien_model');
         $this->load->model('Keluarga_pasien_model');
-        $this->load->model('Kontak_keluarga_model');
+        $this->load->model('Kontak_keluarga_pasien_model');
         $this->load->library('form_validation');
     }
 
@@ -32,7 +32,7 @@ class Pendaftaran extends CI_Controller
         $config['per_page'] = 10;
         $config['page_query_string'] = TRUE;
         $config['total_rows'] = $this->Pendaftaran_model->total_rows($q);
-        $pasien = $this->Pendaftaran_model->get_limit_data($config['per_page'], $start, $q);
+        $pendaftaran = $this->Pendaftaran_model->get_limit_data($config['per_page'], $start, $q);
 
         $this->load->library('pagination');
         $this->pagination->initialize($config);
@@ -175,22 +175,31 @@ class Pendaftaran extends CI_Controller
 		'CEKNIK' => $this->input->post('CEKNIK',TRUE),
 		'TANGGAL' => $this->input->post('TANGGAL',TRUE),
 		'STATUS' => $this->input->post('STATUS',TRUE),
+		'JENIS' => $this->input->post('JENIS', TRUE),
+        'NOMOR' => $this->input->post('NOMOR', TRUE),
+        'SHDK' => $this->input->post('SHDK',TRUE),
+        'JENIS_KELAMIN' => $this->input->post('JENIS_KELAMIN', TRUE),
+	    'ID' => $this->input->post('ID', TRUE),
+	    'NAMA' => $this->input->post('NAMA', TRUE),
+	    'ALAMAT' => $this->input->post('ALAMAT', TRUE),
+	    'PENDIDIKAN' => $this->input->post('PENDIDIKAN', TRUE),
+	    'PEKERJAAN' => $this->input->post('PEKERJAAN', TRUE),
 	    );
 
             $this->Pasien_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('pasien'));
+            redirect(site_url('pendaftaran'));
         }
     }
     
     public function update($id) 
     {
-        $row = $this->Pasien_model->get_by_id($id);
+        $row = $this->Pendaftaran_model->get_by_id($id);
 
         if ($row) {
             $data = array(
                 'button' => 'Update',
-                'action' => site_url('pasien/update_action'),
+                'action' => site_url('pendaftaran/update_action'),
 		'NORM' => set_value('NORM', $row->NORM),
 		'NAMA' => set_value('NAMA', $row->NAMA),
 		'PANGGILAN' => set_value('PANGGILAN', $row->PANGGILAN),
@@ -218,11 +227,20 @@ class Pendaftaran extends CI_Controller
 		'CEKNIK' => set_value('CEKNIK', $row->CEKNIK),
 		'TANGGAL' => set_value('TANGGAL', $row->TANGGAL),
 		'STATUS' => set_value('STATUS', $row->STATUS),
+		'JENIS' => set_value('JENIS', $row->JENIS),
+        'NOMOR' => set_value('NOMOR', $row->NOMOR),
+        'SHDK' => set_value('SHDK',$row->SHDK),
+        'JENIS_KELAMIN' => set_value('JENIS_KELAMIN', $row->JENIS_KELAMIN),
+	    'ID' => set_value('ID', $row->ID),
+	    'NAMA' => set_value('NAMA', $row->NAMA),
+	    'ALAMAT' => set_value('ALAMAT', $row->ALAMAT),
+	    'PENDIDIKAN' => set_value('PENDIDIKAN', $row->PENDIDIKAN),
+	    'PEKERJAAN' => set_value('PEKERJAAN', $row->PEKERJAAN),
 	    );
-            $this->load->view('pasien/pasien_form', $data);
+            $this->load->view('pendaftaran/pendaftaran_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('pasien'));
+            redirect(site_url('pendaftaran'));
         }
     }
     
@@ -260,25 +278,34 @@ class Pendaftaran extends CI_Controller
 		'CEKNIK' => $this->input->post('CEKNIK',TRUE),
 		'TANGGAL' => $this->input->post('TANGGAL',TRUE),
 		'STATUS' => $this->input->post('STATUS',TRUE),
+		'JENIS' => $this->input->post('JENIS', TRUE),
+        'NOMOR' => $this->input->post('NOMOR', TRUE),
+        'SHDK' => $this->input->post('SHDK',TRUE),
+        'JENIS_KELAMIN' => $this->input->post('JENIS_KELAMIN', TRUE),
+	    'ID' => $this->input->post('ID', TRUE),
+	    'NAMA' => $this->input->post('NAMA', TRUE),
+	    'ALAMAT' => $this->input->post('ALAMAT', TRUE),
+	    'PENDIDIKAN' => $this->input->post('PENDIDIKAN', TRUE),
+	    'PEKERJAAN' => $this->input->post('PEKERJAAN', TRUE),
 	    );
 
             $this->Pasien_model->update($this->input->post('NORM', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('pasien'));
+            redirect(site_url('pendaftaran'));
         }
     }
     
     public function delete($id) 
     {
-        $row = $this->Pasien_model->get_by_id($id);
+        $row = $this->Pendaftaran_model->get_by_id($id);
 
         if ($row) {
-            $this->Pasien_model->delete($id);
+            $this->Pendaftaran_model->delete($id);
             $this->session->set_flashdata('message', 'Delete Record Success');
-            redirect(site_url('pasien'));
+            redirect(site_url('pendaftaran'));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('pasien'));
+            redirect(site_url('pendaftaran'));
         }
     }
 
@@ -310,6 +337,15 @@ class Pendaftaran extends CI_Controller
 	$this->form_validation->set_rules('CEKNIK', 'ceknik', 'trim|required');
 	$this->form_validation->set_rules('TANGGAL', 'tanggal', 'trim|required');
 	$this->form_validation->set_rules('STATUS', 'status', 'trim|required');
+	$this->form_validation->set_rules('JENIS', 'jenis', 'trim|required');
+    $this->form_validation->set_rules('NOMOR', 'nomor', 'trim|required');
+	$this->form_validation->set_rules('SHDK', 'shdk', 'trim|required');
+	$this->form_validation->set_rules('JENIS_KELAMIN', 'jenis kelamin', 'trim|required');
+	$this->form_validation->set_rules('ID', 'id', 'trim|required');
+	$this->form_validation->set_rules('NAMA', 'nama', 'trim|required');
+	$this->form_validation->set_rules('ALAMAT', 'alamat', 'trim|required');
+	$this->form_validation->set_rules('PENDIDIKAN', 'pendidikan', 'trim|required');
+	$this->form_validation->set_rules('PEKERJAAN', 'pekerjaan', 'trim|required');
 
 	$this->form_validation->set_rules('NORM', 'NORM', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

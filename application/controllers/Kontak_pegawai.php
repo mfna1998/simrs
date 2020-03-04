@@ -55,7 +55,7 @@ class Kontak_pegawai extends CI_Controller
 	    );
             $this->load->view('kontak_pegawai/kontak_pegawai_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Kontak Pegawai Tidak Ditemukan');
             redirect(site_url('kontak_pegawai'));
         }
     }
@@ -83,7 +83,7 @@ class Kontak_pegawai extends CI_Controller
 	    );
 
             $this->Kontak_pegawai_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Kontak Pegawai Berhasil Ditambah');
             redirect(site_url('kontak_pegawai'));
         }
     }
@@ -102,7 +102,7 @@ class Kontak_pegawai extends CI_Controller
 	    );
             $this->load->view('kontak_pegawai/kontak_pegawai_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Kontak Pegawai Tidak Ditemukan');
             redirect(site_url('kontak_pegawai'));
         }
     }

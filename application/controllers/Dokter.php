@@ -59,7 +59,7 @@ class Dokter extends CI_Controller
 	    );
             $this->load->view('dokter/dokter_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Dokter Tidak Ditemukan');
             redirect(site_url('dokter'));
         }
     }
@@ -97,7 +97,7 @@ class Dokter extends CI_Controller
 	    );
 
             $this->Dokter_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Data Dokter Berhasil Ditambah');
             redirect(site_url('dokter'));
         }
     }
@@ -120,7 +120,7 @@ class Dokter extends CI_Controller
 	    );
             $this->load->view('dokter/dokter_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Dokter Tidak Ditemukan');
             redirect(site_url('dokter'));
         }
     }
@@ -142,7 +142,7 @@ class Dokter extends CI_Controller
 	    );
 
             $this->Dokter_model->update($this->input->post('ID', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Data Dokter Berhasil Dirubah');
             redirect(site_url('dokter'));
         }
     }
@@ -153,10 +153,10 @@ class Dokter extends CI_Controller
 
         if ($row) {
             $this->Dokter_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Data Dokter Berhasil Dihapus');
             redirect(site_url('dokter'));
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Dokter Tidak Ditemukan');
             redirect(site_url('dokter'));
         }
     }

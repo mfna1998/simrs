@@ -57,7 +57,7 @@ class Wilayah extends CI_Controller
 	    );
             $this->load->view('wilayah/wilayah_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Wilayah Tidak Ditemukan');
             redirect(site_url('wilayah'));
         }
     }
@@ -91,7 +91,7 @@ class Wilayah extends CI_Controller
 	    );
 
             $this->Wilayah_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Data Wilayah Berhasil Ditambah');
             redirect(site_url('wilayah'));
         }
     }
@@ -112,7 +112,7 @@ class Wilayah extends CI_Controller
 	    );
             $this->load->view('wilayah/wilayah_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Wilayah Tidak Ditemukan');
             redirect(site_url('wilayah'));
         }
     }
@@ -132,7 +132,7 @@ class Wilayah extends CI_Controller
 	    );
 
             $this->Wilayah_model->update($this->input->post('ID', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Data Wilayah Berhasil Dirubah');
             redirect(site_url('wilayah'));
         }
     }
@@ -143,10 +143,10 @@ class Wilayah extends CI_Controller
 
         if ($row) {
             $this->Wilayah_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Data Wilayah Berhasil Dihapus');
             redirect(site_url('wilayah'));
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Wilayah Tidak Ditemukan');
             redirect(site_url('wilayah'));
         }
     }

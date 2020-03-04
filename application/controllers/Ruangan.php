@@ -57,7 +57,7 @@ class Ruangan extends CI_Controller
 	    );
             $this->load->view('ruangan/ruangan_read', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Ruangan Tidak Ditemukan');
             redirect(site_url('ruangan'));
         }
     }
@@ -91,7 +91,7 @@ class Ruangan extends CI_Controller
 	    );
 
             $this->Ruangan_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
+            $this->session->set_flashdata('message', 'Data Ruangan Berhasil Ditambah');
             redirect(site_url('ruangan'));
         }
     }
@@ -112,7 +112,7 @@ class Ruangan extends CI_Controller
 	    );
             $this->load->view('ruangan/ruangan_update', $data);
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Ruangan Tidak Ditemukan');
             redirect(site_url('ruangan'));
         }
     }
@@ -132,7 +132,7 @@ class Ruangan extends CI_Controller
 	    );
 
             $this->Ruangan_model->update($this->input->post('ID', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
+            $this->session->set_flashdata('message', 'Data Ruangan Berhasil Dirubah');
             redirect(site_url('ruangan'));
         }
     }
@@ -143,10 +143,10 @@ class Ruangan extends CI_Controller
 
         if ($row) {
             $this->Ruangan_model->delete($id);
-            $this->session->set_flashdata('message', 'Delete Record Success');
+            $this->session->set_flashdata('message', 'Data Ruangan Berhasil Dihapus');
             redirect(site_url('ruangan'));
         } else {
-            $this->session->set_flashdata('message', 'Record Not Found');
+            $this->session->set_flashdata('message', 'Data Ruangan Tidak Ditemukan');
             redirect(site_url('ruangan'));
         }
     }
